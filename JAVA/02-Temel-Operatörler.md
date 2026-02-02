@@ -65,8 +65,6 @@ System.out.println(-number); // -10
 `*` operatörü Java’da **sayısal değerleri çarpmak** için kullanılır.  
 Matematikteki çarpma işlemiyle **aynı mantıkta** çalışır.
 
----
-
 #### Temel Kullanım
 
 İki sayıyı çarpar ve sonucu üretir.
