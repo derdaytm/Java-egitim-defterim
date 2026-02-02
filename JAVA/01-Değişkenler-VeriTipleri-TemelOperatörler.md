@@ -614,3 +614,9 @@ System.out.println(12 + 4 + " ahmet " + 6 + 3); // Burada çıktı : 16 ahmet 63
 Konsol Çıktısı :
 
 <img width="507" height="68" alt="image" src="https://github.com/user-attachments/assets/f0cd311f-bd8d-4887-8f92-d23b05b49458" />
+
+---
+
+### 📚 Konu Akışı
+ 
+**➡️ Sonraki:** [**Temel Operatörler**](02-Temel-Operatörler.md)   
