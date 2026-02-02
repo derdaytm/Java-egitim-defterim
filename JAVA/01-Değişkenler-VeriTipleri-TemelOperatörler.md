@@ -505,7 +505,7 @@ System.out.println(j);
 - Unicode karakter setini kullanır.
 - Harf, rakam ve özel karakter tutabilir.
 
-> **NOT**  
+> **NOT**: <br>
 > Java’da `char`, ASCII ile sınırlı değildir, Unicode destekler.
 
 #### Örnek Kullanım
@@ -532,3 +532,85 @@ char d = '\u0152';  // unicode karakter numarası girerek değeri atayabiliriz
 boolean isActive = true;
 boolean isLoggedIn = false;
 ```
+
+### String Veri Tipi
+
+- `String`, Java’da **metin (yazı) ifadelerini** saklamak için kullanılır.
+
+#### Temel Kurallar / Özellikler
+- Değerler **çift tırnak (" ")** içinde yazılır. (Zorunludur)
+- Java’da en sık kullanılan veri tiplerinden biridir.
+
+#### Örnek Kullanım
+```java
+String name = "Ahmet";
+String message = "Merhaba Java";
+```
+`+` ile alt satıra geçilebilir
+
+```java
+String a = "Java" +
+          "Programlama" +
+          "Dili";
+```
+
+> **NOT**: <br>
+> - `\t` => String içinde kullanılarak 1 tab boşluğu bırakır.
+> - `\n` => String içinde kullanılarak alt satıra geçmeyi sağlar.
+
+---
+
+### System.out.println ile Birleştirme (Concatenation)
+
+- `System.out.println`, farklı veri tiplerini **tek bir çıktı halinde** yazdırabilir.
+- Bu işlem `+` operatörü ile yapılır.
+- `+` operatörü String ile kullanıldığında **birleştirme** görevi görür.
+
+#### Temel Kurallar / Özellikler
+- String varsa, diğer veri tipleri otomatik olarak String’e çevrilir.
+- Yazdırma işlemi soldan sağa doğru yapılır.
+- Sayılar String’den önce gelirse toplama yapılır, sonra birleştirme olur.
+
+#### Örnek Kullanım
+```java
+String name = "Ahmet";
+int age = 25;
+
+System.out.println("İsim: " + name);
+System.out.println("Yaş: " + age);
+System.out.println("İsim: " + name + "Yaş: " + age); // Bu şekilde de yazılabilir
+```
+
+Ancak sıralamasına dikkat etmezsek aşşağıdaki gibi hatalar olabilir.
+
+```java
+System.out.println(10 + 5 + " sayı"); // Burada çıktı : 15 sayı
+```
+
+```java
+System.out.println("Sayı : " + 10 + 5); // Burada çıktı : Sayı : 105
+```
+
+```java
+System.out.println(12 + 4 + " ahmet " + 6 + 3); // Burada çıktı : 16 ahmet 63
+```
+
+> **NOT**:<br>
+> Java ifadeleri **soldan sağa doğru** değerlendirir.  
+> - Eğer ifade **sayı ile başlar** ve ardından yine **sayı gelirse**, işlem **matematiksel toplama** olarak yapılır.  
+> - Ancak **String (yazı)** geldikten sonra tüm ifade **String birleştirme** olarak devam eder.
+> Buradaki kural String değişkenine atama yapılırken kullanılan + operatörü içinde geçerlidir.
+
+```java
+        int a = 3;
+        int b = 5;
+        String c = "selam";
+
+        String d = a + b + c + a + b;
+
+        System.out.println(d);
+```
+
+Konsol Çıktısı :
+
+<img width="507" height="68" alt="image" src="https://github.com/user-attachments/assets/f0cd311f-bd8d-4887-8f92-d23b05b49458" />
