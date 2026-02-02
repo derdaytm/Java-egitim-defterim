@@ -400,6 +400,8 @@ System.out.print("float maksimum değeri: ");
 System.out.println(Float.MAX_VALUE);
 ```
 
+---
+
 ### double Veri Tipi
 
 - `double`, Java’da **ondalıklı (virgüllü) sayıları** saklamak için kullanılan  ve varsayılan veri tipidir.
@@ -450,14 +452,15 @@ Konsol Çıktısı :
 
 Burada hassasiyet farkı net bir şekilde görülmektedir.
 
-## int, float ve double Arası Dönüşüm
+---
+
+### int, float ve double Arası Dönüşüm
 
 Java’da sayısal veri tipleri arasında dönüşüm yapılabilir.  
 Ancak **tam sayılar** ile **ondalıklı sayılar** arasında dönüşümde dikkat edilmesi gereken noktalar vardır.
 
----
 
-### Sorunsuz Dönüşüm (Otomatik – Widening)
+#### Sorunsuz Dönüşüm (Otomatik – Widening)
 
 ```text
 int → float → double
@@ -496,6 +499,8 @@ float j = (float) i // Burada (float) yazıarak kodu çalışabilir hale getirdi
 System.out.println(j);
 ```
 
+---
+
 ### char Veri Tipi
 
 - `char`, Java’da **tek bir karakter** saklamak için kullanılır.
@@ -519,6 +524,8 @@ char a = 1000; // Bu şekilde yaparak 1000 karaktere karşılık gelen değeri a
 char d = '\u0152';  // unicode karakter numarası girerek değeri atayabiliriz
 ```
 
+---
+
 ### boolean Veri Tipi
 
 - `boolean`, Java’da **mantıksal değerleri** tutmak için kullanılır.
@@ -534,6 +541,8 @@ char d = '\u0152';  // unicode karakter numarası girerek değeri atayabiliriz
 boolean isActive = true;
 boolean isLoggedIn = false;
 ```
+
+---
 
 ### String Veri Tipi
 
