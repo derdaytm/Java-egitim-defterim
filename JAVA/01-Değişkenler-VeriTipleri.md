@@ -366,6 +366,8 @@ System.out.println(b);
 >**NOT**:<br>
 >Gerekli olan dönüşüm tespit edilip parantez içinde ona uygun ifadeye yer verilmelidir.
 
+---
+
 ### float Veri Tipi
 
 - `float`, Java’da **ondalıklı (virgüllü) sayıları** saklamak için kullanılır.
