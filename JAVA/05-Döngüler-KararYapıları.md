@@ -416,3 +416,118 @@ do {
 - **for** → Kaç kez döneceğini biliyorsan  
 - **while** → Ne zaman biteceğini bilmiyorsan  
 - **do-while** → Kod **en az 1 kez mutlaka çalışmalıysa**
+
+---
+
+## break Anahtar Kelimesi
+
+`break`, Java’da **akışı anında durdurmak** için kullanılır.  
+Bulunduğu yapıyı **hemen sonlandırır** ve kod akışı dışarıdan devam eder.
+
+## Döngülerde break Kullanımı
+
+Bir döngü çalışırken belirli bir şart oluştuğunda  
+**döngüyü erken bitirmek** için `break` kullanılır.
+
+### Örnek Kullanım
+```java
+// `for` döngüsünde kullanımı
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break; // i 5 olduğunda döngü durur
+    }
+    System.out.println(i);
+}
+
+// `while` döngüsünde kullanımı
+int i = 1;
+
+while (i <= 10) {
+    if (i == 7) {
+        break; // i 7 olduğunda döngü biter
+    }
+    System.out.println(i);
+    i++;
+}
+
+// `do-while` döngüsünde kullanımı
+int i = 1;
+
+do {
+    if (i == 3) {
+        break; // koşuldan bağımsız olarak döngü sonlanır
+    }
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+```
+
+Bazen sayaç artırma / azaltma yapılmadan direk break ile bitirilebilir :
+```java
+// `while` döngüsünde kullanımı
+int i = 1;
+
+while (i <= 10) {
+    if (i == 7) {
+        break; // i 7 olduğunda döngü biter
+    }
+    System.out.println(i);
+}
+
+// `do-while` döngüsünde kullanımı
+int i = 1;
+
+do {
+    if (i == 3) {
+        break; // koşuldan bağımsız olarak döngü sonlanır
+    }
+    System.out.println(i);
+} while (i <= 5);
+```
+
+---
+
+## continue Anahtar Kelimesi
+
+`continue`, Java’da **döngü içinde o turu atlamak** için kullanılır.  
+Bulunduğu turda **kalan kodları çalıştırmaz** ve bir sonraki turdan devam eder.
+
+### Örnek Kullanım
+```java
+// `for` döngüsünde kullanımı
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue; // i 3 olduğunda yazdırma işlemi atlanır
+    }
+    System.out.println(i);
+}
+
+// `while` döngüsünde kullanımı
+int i = 0;
+
+while (i < 5) {
+    i++;
+    if (i == 2) {
+        continue; // i = 2 turu atlanır
+    }
+    System.out.println(i);
+}
+
+// `do-while` döngüsünde kullanımı
+int i = 0;
+
+do {
+    i++;
+    if (i == 4) {
+        continue; // i = 4 turunu atlar
+    }
+    System.out.println(i);
+} while (i < 5);
+```
+
+---
+
+### 📚 Konu Akışı
+
+**⬅️ Önceki:** [**Koşullu Durumlar ve Kod Blokları**](04-KoşulluDurumlar-KodBlokları.md)   
+**➡️ Sonraki:** [**Metodlar ve Metodlarda Overloading**](06-Metodlar-MetodlardaOverloading.md)
