@@ -19,7 +19,7 @@ Java’da **3 temel döngü yapısı** vardır:
 - **while döngüsü** → Koşul baştan kontrol edilecekse
 - **do-while döngüsü** → Kod en az bir kez çalışacaksa
 
-> Eğer döngüler konusunu biliyor ancak hangi döngüyü kullanmakta karar veremiyorsanız [BURAYA TIKLAYABİLİRSİNİZ](##for-while-ve-dowhile-Arasındaki-Temel-Farklar)
+> Eğer döngüler konusunu biliyor ancak hangi döngüyü kullanmakta karar veremiyorsanız [BURAYA TIKLAYABİLİRSİNİZ](#for-while-ve-do-while-Arasındaki-Temel-Farklar)
 
 ---
 
