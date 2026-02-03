@@ -301,5 +301,5 @@ public static void main(String[] args) {
 
 ### 📚 Konu Akışı
 
-**⬅️ Önceki:** [**Döngüler ve Karar Yapıları**](05-Döngüler-KararYapıları.md) 
+**⬅️ Önceki:** [**Döngüler ve Karar Yapıları**](05-Döngüler-KararYapıları.md)<br> 
 **➡️ Sonraki:** [**Sınıflar, Metodlar, Constructorlar ve İnheritence**](07-Sınıflar-Metodlar-Constructorlar-Kalıtım.md)
