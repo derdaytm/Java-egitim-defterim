@@ -19,6 +19,8 @@ Java’da **3 temel döngü yapısı** vardır:
 - **while döngüsü** → Koşul baştan kontrol edilecekse
 - **do-while döngüsü** → Kod en az bir kez çalışacaksa
 
+> Eğer döngüler konusunu biliyor ancak hangi döngüyü kullanmakta karar veremiyorsanız [BURAYA TIKLAYABİLİRSİNİZ](##for-while-ve-dowhile-Arasındaki-Temel-Farklar)
+
 ---
 
 ## for Döngüsü
@@ -204,7 +206,7 @@ while (i <= 5) {
 }
 ```
 
-Burada sayaç artışı / azalışı matematiksel ifadelerle duruma göre ayarlanır :
+Sayaç artışı / azalışı matematiksel ifadelerle duruma göre ayarlanır :
 
 ```java
 int i = 1;
@@ -337,3 +339,80 @@ do {
 } while (i < 3);
 ```
 
+Sayaç artışı / azalışı matematiksel ifadelerle duruma göre ayarlanır :
+
+```java
+int i = 0;
+
+do {
+    System.out.println(i);
+    i += 2;
+} while (i < 3);
+```
+
+Eğer sayaç artış / azalışı unutulursa veya yanlış girilirse sonsuz döngü oluşturulabilir :
+
+```java
+int i = 0;
+
+do {
+    System.out.println(i);
+    i--; // Azaldığı için sonsuz döngü 
+} while (i < 3);
+
+// ya da
+
+int i = 0;
+
+do {
+    System.out.println(i);
+     // `i++` gibi bir kısım yok o yüzden sonsuz döngü 
+} while (i < 3);
+```
+
+---
+
+## do-while Döngüsünde Birden Fazla Değişken
+
+`do-while` döngüsünde de **birden fazla değişken** aynı anda kullanılabilir ve  
+bu değişkenler **koşul kısmında birlikte kontrol edilebilir**.
+
+Ancak `do-while`’ın önemli bir farkı vardır:
+- **Koşul en sonda kontrol edilir**
+- Bu yüzden **koşul baştan yanlış olsa bile kod en az 1 kez çalışır**
+
+Bu yapı genellikle:
+- İşlemin **en az bir kez yapılmasının zorunlu olduğu**
+- Sonrasında şartların kontrol edilmesi gereken  
+durumlarda tercih edilir.
+
+### Örnek Kullanım
+```java
+int a = 1;
+int b = 10;
+
+do {
+    System.out.println("a: " + a + " b: " + b);
+    a++; // a değişkeni her turda 1 artırılır
+    b--; // b değişkeni her turda 1 azaltılır
+} while (a <= 5 && b >= 5);
+```
+
+---
+
+## for, while ve do-while Arasındaki Temel Farklar
+
+| Özellik | for Döngüsü | while Döngüsü | do-while Döngüsü |
+|------|------------|---------------|------------------|
+| Tekrar Sayısı | Tekrar sayısı **bellidir** | Tekrar sayısı **belirsizdir** | Tekrar sayısı **belirsizdir** |
+| Sayaç Tanımı | Sayaç **döngü içinde** tanımlanır | Sayaç **döngü dışında** tanımlanır | Sayaç **döngü dışında** tanımlanır |
+| Koşul Kontrolü | Döngü **başında** kontrol edilir | Döngü **başında** kontrol edilir | Döngü **sonunda** kontrol edilir |
+| En Az Çalışma | Koşul false ise **hiç çalışmaz** | Koşul false ise **hiç çalışmaz** | Koşul false olsa bile **en az 1 kez çalışır** |
+| Okunabilirlik | Daha **düzenli ve kısa** | Daha **esnek** | Mantığı net ama daha az kullanılır |
+| Kullanım Amacı | Sayma, listeleme, aralık işlemleri | Belirsiz tekrarlar, kullanıcı girişi | En az 1 kez çalışması gereken işlemler |
+| Tipik Kullanım | Sabit tekrar sayısı | Koşula bağlı süreçler | Menü, doğrulama, ilk çalıştırma |
+
+### Kısa Özet
+- **for** → Kaç kez döneceğini biliyorsan  
+- **while** → Ne zaman biteceğini bilmiyorsan  
+- **do-while** → Kod **en az 1 kez mutlaka çalışmalıysa**
