@@ -10,8 +10,7 @@
 
 ## İçerik
 
-- HTML
-  - [Temel Bilgiler](/HTML/01-temel-bilgiler.md)
+  - [Değişkenler ve Veri Tipleri](/JAVA/01-Değişkenler-VeriTipleri.md)
 
 Daha detaylı içerik için [DETAYLI DOKÜMANTASYON](DETAYLI-DOKÜMANTASYON.md
 ) dosyasına bakabilirsiniz.
