@@ -1,7 +1,7 @@
 ## JAVA Hakkında
 
 - Java **platform bağımsızdır**. (windowsta yazılan linuxda da çalışabilir)
-- Java **nesneye yönelik** bir programlama dilidir.
+- Java **nesneye yönelik** bir programlama dilidir. (Javada herşey nesnedir)
 - Java’da **pointer yoktur**, **referans** kullanılır.
 - Java **geriye dönük uyumludur** (eski sürüm kodları yeni sürümlerde çalışır).
 - **Java hem derlenen hem yorumlanan bir dildir**:  
