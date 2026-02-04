@@ -50,6 +50,9 @@ public class Deneme {
 
 <img width="604" height="67" alt="image" src="https://github.com/user-attachments/assets/93d38009-1400-4910-9d35-2386915918de" />
 
+> **Önemli Not: Sınıf ve Dosya Adı**: <br>
+> Java’da **sınıfın adı**, bulunduğu **dosya adıyla aynı olmalıdır**.  
+
 ### Temel Yapı Açıklamaları
 - **public**: Bu sınıfa ve metoda her yerden erişilebileceğini belirtir.
 - **class**: Java’da kodların yazıldığı temel yapıdır.
@@ -193,6 +196,8 @@ int total-count;  // özel karakter kullanılamaz
 #### Mantıksal Tür
 - **boolean** → `true` veya `false` değerini tutar
 
+#### Metin, Yazı (Karakter Dizi) Türü
+- **string** → Metin tutar
 ---
 
 ### byte Veri Tipi
