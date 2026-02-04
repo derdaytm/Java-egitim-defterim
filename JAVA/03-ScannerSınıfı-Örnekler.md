@@ -10,11 +10,11 @@ Konsoldan **sayı, metin veya diğer veri tiplerini** okuyabiliriz.
 - Konsoldan veri almak için **nesne oluşturmak** gerekir. (örnek kısmında anlaşılacak)
 - Kullanıcı girişi **beklenir** ve program o noktada durur.
 - Farklı veri tipleri için farklı metodlar vardır:
-  - `nextLine()` → String okur (satır tamamı)
-  - `next()` → String okur (Sadece boşluğa kadar tamamını değil)
-  - `nextInt()` → int okur
-  - `nextDouble()` → double okur
-  - `nextBoolean()` → boolean okur
+  - `nextLine()` → String okur. (satır tamamı)
+  - `next()` → String okur. (Sadece boşluğa kadar tamamını değil)
+  - `nextInt()` → int okur.
+  - `nextDouble()` → double okur.
+  - `nextBoolean()` → boolean okur.
 - Sonrasında `scanner.close()` scanner ile işimiz bittiğinde bu komut ile kapatarak veri sızıntısını önleyebiliriz. Kullanılmaması sorun yaratmaz.
 
 
@@ -53,9 +53,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); // Burada scanner yerine input yazdık. (başka şeylerde yazılabilir)
-                                                // Buradaki 'input' ismi, oluşturduğumuz Scanner nesnesinin adıdır. Değişken adı gibi bunu da biz adlandırıyoruz. 
+                                                // Buradaki 'input' ismi, oluşturduğumuz Scanner nesnesinin adıdır.
+                                                // Değişken adı gibi bunu da biz adlandırıyoruz. 
                                                // İstersek bunu başka bir isimle de yazabiliriz, örn: 'scanner' veya 'kb' gibi.  
-                                               // Önemli olan Scanner sınıfını kullanmak ve bu nesne üzerinden metodları çağırmaktır.
+                                               // Önemli olan Scanner sınıfını kullanarak nesne üzerinden metodları çağırmaktır.
 
         // String okuma
         System.out.print("İsminizi girin: ");
@@ -94,7 +95,6 @@ public class Main {
 ## Scanner ile Boşluk Kullanarak Veri Girişi
 
 `Scanner` sınıfı ile kullanıcı **boşluk bırakarak birden fazla veri girebilir**.  
-Bu durumda `next()` metodu **sadece boşluğa kadar olan kısmı** okur, `nextLine()` tüm satırı okur.
 
 ### Örnek kullanım
 ```java
