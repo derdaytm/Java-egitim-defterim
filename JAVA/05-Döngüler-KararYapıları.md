@@ -1,34 +1,34 @@
-## Döngü (Loop) Nedir?
+## Döngü (Loop)
 
 ### Ne İşe Yarar?
-- Tekrarlanan işlemleri otomatik hale getirir
-- Kod tekrarını azaltır
-- Daha temiz ve okunabilir kod yazmayı sağlar
+- Tekrarlanan işlemleri otomatik hale getirir.
+- Kod tekrarını azaltır.
+- Daha temiz ve okunabilir kod yazmayı sağlar.
 
 ### Temel Mantık
-- Bir **başlangıç değeri** vardır
-- Bir **koşul** kontrol edilir
-- Her adımda **ilerleme** (artış / azalış) olur  
-- Koşul `false` olduğunda döngü durur
+- Bir **başlangıç değeri** vardır.
+- Bir **koşul** kontrol edilir.
+- Her adımda **ilerleme** (artış / azalış) olur.
+- Koşul `false` olduğunda döngü durur.
 
 ### Döngü Türleri
 
 Java’da **3 temel döngü yapısı** vardır:
 
-- **for döngüsü** → Kaç kez çalışacağı belliyse
-- **while döngüsü** → Koşul baştan kontrol edilecekse
-- **do-while döngüsü** → Kod en az bir kez çalışacaksa
+- **for döngüsü** → Kaç kez çalışacağı belliyse.
+- **while döngüsü** → Koşul baştan kontrol edilecekse.
+- **do-while döngüsü** → Kod en az bir kez çalışacaksa.
 
-> Eğer döngüler konusunu biliyor ancak hangi döngüyü kullanmakta karar veremiyorsanız [BURAYA TIKLAYABİLİRSİNİZ](#for-while-ve-do-while-Arasındaki-Temel-Farklar)
+> Eğer döngüler konusunu biliyor ancak hangi döngüyü kullanmakta karar veremiyorsanız [BURAYA TIKLAYABİLİRSİNİZ.](#for-while-ve-do-while-Arasındaki-Temel-Farklar)
 
 ---
 
 ## for Döngüsü
 
 ### Ne Zaman Kullanılır?
-- Belirli sayıda tekrar gerekiyorsa
-- Sayma, listeleme, aralık kontrolü yapılacaksa
-- Başlangıç ve bitiş değeri netse
+- Belirli sayıda tekrar gerekiyorsa.
+- Sayma, listeleme, aralık kontrolü yapılacaksa.
+- Başlangıç ve bitiş değeri netse.
 
 ### Temel Yapı
 ```java
@@ -39,9 +39,9 @@ for (başlangıç; koşul; artış) {
 
 ### Yapının Anlamı
 
-- **başlangıç** → Döngü sayacının ilk değeridir  
-- **koşul** → Döngünün devam edip etmeyeceğini belirler  
-- **artış** → Her turda sayacın nasıl değişeceğini ifade eder  
+- **başlangıç** → Döngü sayacının ilk değeridir. 
+- **koşul** → Döngünün devam edip etmeyeceğini belirler.
+- **artış** → Her turda sayacın nasıl değişeceğini ifade eder.
 
 > **NOT**:
 > Koşul sağlandığında döngüye son verilir.
@@ -161,6 +161,14 @@ for (int x = 1, y = 1; x <= 3 || y <= 3; x++, y++) {
 for (int a = 0, b = 20; a < b && b > 10; a += 2, b -= 3) {
     System.out.println("a: " + a + " b: " + b);
 }
+
+// Atama ve / veya Tanımlama Dışarda da yapılabilir.
+
+int a = 0, b = 20
+
+for (; a < b && b > 10; a += 2, b -= 3) {
+    System.out.println("a: " + a + " b: " + b);
+
 ```
 
 ***
@@ -168,10 +176,10 @@ for (int a = 0, b = 20; a < b && b > 10; a += 2, b -= 3) {
 ## while Döngüsü
 
 ### Ne Zaman Kullanılır?
-- Kaç kez çalışacağı **önceden belli değilse**
-- Döngü **tamamen bir koşula bağlıysa**
-- Kullanıcıdan gelen veriye göre tekrar gerekiyorsa
-- Bir işlem **koşul sağlandığı sürece** devam edecekse
+- Kaç kez çalışacağı **önceden belli değilse**.
+- Döngü **tamamen bir koşula bağlıysa**.
+- Kullanıcıdan gelen veriye göre tekrar gerekiyorsa.
+- Bir işlem **koşul sağlandığı sürece** devam edecekse.
 
 ---
 
@@ -185,16 +193,14 @@ while (koşul) {
 
 ### Yapının Anlamı
 
-- **koşul** → Döngünün çalışıp çalışmayacağını belirler  
-- Koşul **en başta** kontrol edilir  
-- Koşul `true` ise döngü çalışır  
-- Koşul `false` ise döngü **hiç çalışmaz**
+- **koşul** → Döngünün çalışıp çalışmayacağını belirler.  
+- Koşul **en başta** kontrol edilir.
+- Koşul `true` ise döngü çalışır.  
+- Koşul `false` ise döngü **hiç çalışmaz**.
 
-### ÖNEMLİ ⚠️
-`while` döngüsünde **önce koşul kontrol edilir**,  
-**sonra** kod bloğu çalışır.
-
-Bu yüzden koşul **baştan yanlışsa**, döngüye **asla girilmez**.
+>**ÖNEMLİ**<br>
+>`while` döngüsünde **önce koşul kontrol edilir**, **sonra** kod bloğu çalışır.<br>
+>Bu yüzden koşul **baştan yanlışsa**, döngüye **asla girilmez**.
 
 #### Örnek Kullanım
 ```java
@@ -242,14 +248,12 @@ while (i <= 5) {
 
 ## while Döngüsünde Birden Fazla Değişken
 
-`while` döngüsünde **birden fazla değişken** aynı anda kullanılabilir ve  
-bu değişkenler **koşul kısmında birlikte kontrol edilebilir**.
+`while` döngüsünde **birden fazla değişken** aynı anda kullanılabilir ve bu değişkenler **koşul kısmında birlikte kontrol edilebilir**.
 
 Bu yapı genellikle:
-- İki değerin birbirine yaklaşması
-- Biri artarken diğerinin azalması
-- Birden fazla şartın aynı anda sağlanması  
-gereken durumlarda kullanılır.
+- İki değerin birbirine yaklaşması.
+- Biri artarken diğerinin azalması.
+- Birden fazla şartın aynı anda sağlanması gereken durumlarda kullanılır.
 
 ### Örnek Kullanım
 ```java
@@ -277,17 +281,17 @@ while (a <= 5 && b >= 5) {
 | Tercih Edilme | Sayma, listeleme, aralık işlemleri | Kullanıcı girişi, belirsiz süreçler |
 
 ### Kısa Özet
-- **for** → Kaç kez döneceğini biliyorsan  
-- **while** → Ne zaman biteceğini bilmiyorsan
+- **for** → Kaç kez döneceğini biliyorsan. 
+- **while** → Ne zaman biteceğini bilmiyorsan.
 
 ---
 
 ## do-while Döngüsü
 
 ### Ne Zaman Kullanılır?
-- Kodun **en az bir kez çalışması gerekiyorsa**
-- Kullanıcıdan veri alınıp **sonradan kontrol yapılacaksa**
-- Menü, onay, tekrar deneme gibi senaryolarda
+- Kodun **en az bir kez çalışması gerekiyorsa**.
+- Kullanıcıdan veri alınıp **sonradan kontrol yapılacaksa**.
+- Menü, onay, tekrar deneme gibi senaryolarda.
 
 ---
 
@@ -303,14 +307,14 @@ do {
 > `do-while` döngüsünde `while` satırı **noktalı virgül (;) ile biter**.
 
 ### Yapının Anlamı
-- **do bloğu** → Önce çalışır  
-- **koşul** → En son kontrol edilir  
-- Koşul `true` ise döngü tekrar eder  
-- Koşul `false` olsa bile **kod en az 1 kez çalışır**
+- **do bloğu** → Önce çalışır.  
+- **koşul** → En son kontrol edilir.  
+- Koşul `true` ise döngü tekrar eder.  
+- Koşul `false` olsa bile **kod en az 1 kez çalışır**.
 
 ### ÖNEMLİ FARK (for / while ile)
-- `do-while`, koşulu **sonda** kontrol eder  
-- Bu yüzden koşul baştan yanlış olsa bile **1 kez çalışır*
+- `do-while`, koşulu **sonda** kontrol eder. 
+- Bu yüzden koşul baştan yanlış olsa bile **1 kez çalışır*.
 
 #### Örnek Kullanım
 ```java
@@ -321,7 +325,7 @@ do {
     i++;
 } while (i < 3);
 
-// Burada koşul sağlanmamasına rağmen 1 kez çalıştı
+// Burada koşul sağlanmamasına rağmen 1 kez çalıştı.
 ```
 
 **Tarayıcı Çıktısı**
@@ -374,17 +378,11 @@ do {
 
 ## do-while Döngüsünde Birden Fazla Değişken
 
-`do-while` döngüsünde de **birden fazla değişken** aynı anda kullanılabilir ve  
-bu değişkenler **koşul kısmında birlikte kontrol edilebilir**.
-
-Ancak `do-while`’ın önemli bir farkı vardır:
-- **Koşul en sonda kontrol edilir**
-- Bu yüzden **koşul baştan yanlış olsa bile kod en az 1 kez çalışır**
+`do-while` döngüsünde de **birden fazla değişken** aynı anda kullanılabilir ve bu değişkenler **koşul kısmında birlikte kontrol edilebilir**.
 
 Bu yapı genellikle:
-- İşlemin **en az bir kez yapılmasının zorunlu olduğu**
-- Sonrasında şartların kontrol edilmesi gereken  
-durumlarda tercih edilir.
+- İşlemin **en az bir kez yapılmasının zorunlu olduğu**.
+- Sonrasında şartların kontrol edilmesi gereken durumlarda tercih edilir.
 
 ### Örnek Kullanım
 ```java
@@ -413,9 +411,9 @@ do {
 | Tipik Kullanım | Sabit tekrar sayısı | Koşula bağlı süreçler | Menü, doğrulama, ilk çalıştırma |
 
 ### Kısa Özet
-- **for** → Kaç kez döneceğini biliyorsan  
-- **while** → Ne zaman biteceğini bilmiyorsan  
-- **do-while** → Kod **en az 1 kez mutlaka çalışmalıysa**
+- **for** → Kaç kez döneceğini biliyorsan.  
+- **while** → Ne zaman biteceğini bilmiyorsan.  
+- **do-while** → Kod **en az 1 kez mutlaka çalışmalıysa**.
 
 ---
 
@@ -426,8 +424,7 @@ Bulunduğu yapıyı **hemen sonlandırır** ve kod akışı dışarıdan devam e
 
 ## Döngülerde break Kullanımı
 
-Bir döngü çalışırken belirli bir şart oluştuğunda  
-**döngüyü erken bitirmek** için `break` kullanılır.
+Bir döngü çalışırken belirli bir şart oluştuğunda **döngüyü erken bitirmek** için `break` kullanılır.
 
 ### Örnek Kullanım
 ```java
