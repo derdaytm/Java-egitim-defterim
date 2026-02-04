@@ -6,9 +6,9 @@ Bu operatörler sayesinde toplama, çıkarma, çarpma, bölme ve kalan bulma gib
 Aritmetik operatörler genellikle **int, float, double, long** gibi **sayısal veri tipleri** ile kullanılır ve işlem sonucunda yine bir değer üretirler.
 
 Kısaca:
-- Sayılarla işlem yapmak için kullanılırlar
-- Matematiksel hesaplamaların temelini oluştururlar
-- Programlama sırasında en sık kullanılan operatör grubudur
+- Sayılarla işlem yapmak için kullanılırlar.
+- Matematiksel hesaplamaların temelini oluştururlar.
+- Programlama sırasında en sık kullanılan operatör grubudur.
 
 ---
 
@@ -35,7 +35,7 @@ System.out.println(a + b); // 15
 ### `-` Operatörü (Çıkarma)
 
 `-` operatörü Java’da **sayısal değerler arasında çıkarma işlemi** yapmak için kullanılır.  
-Bu operatör yalnızca **matematiksel amaçla** kullanılır, **String birleştirme** gibi bir görevi yoktur.
+Bu operatör yalnızca **matematiksel amaçla** kullanılır, **Stringdeki gibi birleştirme** görevi yoktur.
 
 
 #### Temel Çıkarma İşlemi
@@ -65,10 +65,6 @@ System.out.println(-number); // -10
 `*` operatörü Java’da **sayısal değerleri çarpmak** için kullanılır.  
 Matematikteki çarpma işlemiyle **aynı mantıkta** çalışır.
 
-#### Temel Kullanım
-
-İki sayıyı çarpar ve sonucu üretir.
-
 #### Örnek Kullanım
 ```java
 int a = 4;
@@ -87,10 +83,6 @@ System.out.println(a * b * c); //120
 
 `%` operatörü Java’da **bir sayının diğerine bölümünden kalanı** bulmak için kullanılır.  
 Bu işleme **modulus** veya **mod** denir.
-
-#### Temel Kullanım
-
-Bir sayının diğerine bölümünden kalan değeri verir.
 
 #### Örnek Kullanım
 ```java
@@ -142,8 +134,8 @@ Java’da **arttırma ve azaltma operatörleri**, bir değişkenin değerini **1
 #### Ön Ek ve Son Ek Farkı
 
 1. **Ön Ek (`++a`, `--a`)**  
-   - Değeri **önce** artırır/azaltır  
-   - Sonra kullanılacak değeri üretir
+   - Değeri **önce** artırır/azaltır.  
+   - Sonra kullanılacak değeri üretir.
 
 ```java
 int a = 5;
@@ -152,8 +144,8 @@ System.out.println(++a); // 6 (önce artırıldı sonra konsola basıldı)
 
 2. **Son Ek (`a++`, `a--`)**
 
-- Değeri **önce kullanır**  
-- İşlem **sonra yapılır**
+- Değeri **önce kullanır**.  
+- **Sonra** artırır/azaltır. 
 
 #### Örnek Kullanım
 ```java
@@ -170,9 +162,9 @@ Java’da matematiksel işlemlerde **öncelik sırasını değiştirmek** için 
 Parantez içindeki işlemler, **her zaman önce yapılır**.
 
 ### Temel Kurallar / Özellikler
-- `()` → Öncelik belirler
-- Matematikteki işlem önceliği kuralları (çarpma, bölme önce, toplama, çıkarma sonra) geçerlidir
-- Parantez kullanarak karmaşık işlemler daha okunabilir ve hatasız olur
+- `()` → Öncelik belirler.
+- Matematikteki işlem önceliği kuralları (çarpma, bölme önce, toplama, çıkarma sonra) geçerlidir.
+- Parantez kullanarak karmaşık işlemler daha okunabilir ve hatasız olur.
 
 ### Örnek Kullanım
 ```java
@@ -227,7 +219,7 @@ Mantıksal operatörler, **boolean değerler** üzerinde işlem yapmak için kul
 | Operatör | Anlamı |
 |----------|--------|
 | `&&`     | VE (and) → Her iki değer de true olmalı |
-| `||`     | VEYA (or) → En az biri true ise true |
+| ||     | VEYA (or) → En az biri true ise true |
 | `!`      | DEĞİL (not) → Değerin tersini alır |
 
 #### Örnek Kullanım
