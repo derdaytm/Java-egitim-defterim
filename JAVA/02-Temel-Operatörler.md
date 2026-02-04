@@ -219,7 +219,7 @@ Mantıksal operatörler, **boolean değerler** üzerinde işlem yapmak için kul
 | Operatör | Anlamı |
 |----------|--------|
 | `&&`     | VE (and) → Her iki değer de true olmalı |
-| ||     | VEYA (or) → En az biri true ise true |
+| `\|\|`     | VEYA (or) → En az biri true ise true |
 | `!`      | DEĞİL (not) → Değerin tersini alır |
 
 #### Örnek Kullanım
