@@ -4,9 +4,9 @@ Java’da **kod blokları**, `{ }` süslü parantezler arasına yazılan ve **bi
 Bir kod bloğu, Java’ya **hangi satırların birlikte çalışacağını** söyler.
 
 ### Ne İşe Yarar?
-- Kodun **başlangıç ve bitiş sınırlarını** belirler
-- Değişkenlerin **geçerlilik alanını (scope)** tanımlar
-- Programın daha **düzenli ve okunabilir** olmasını sağlar
+- Kodun **başlangıç ve bitiş sınırlarını** belirler.
+- Değişkenlerin **geçerlilik alanını (scope)** tanımlar.
+- Programın daha **düzenli ve okunabilir** olmasını sağlar.
 
 ---
 
@@ -16,10 +16,10 @@ Bir kod bloğu, Java’ya **hangi satırların birlikte çalışacağını** sö
 Amaç sadece çalışan kod yazmak değil, **başka biri baktığında rahatça anlayabileceği kod** yazmaktır.
 
 ### Neden Önemlidir?
-- Okuması ve anlaması kolay olur
-- Hatalar daha hızlı fark edilir
-- Kod geliştirmek ve düzenlemek kolaylaşır
-- Uzun vadede projeyi sürdürülebilir yapar
+- Okuması ve anlaması kolay olur.
+- Hatalar daha hızlı fark edilir.
+- Kod geliştirmek ve düzenlemek kolaylaşır.
+- Uzun vadede projeyi sürdürülebilir yapar.
 
 ### Temel Temiz Kod Kuralları
 
@@ -101,8 +101,8 @@ public class Main {
 
 ### Temel Mantık
 
-- Koşul **true** ise → `if` bloğu çalışır
-- Koşul **false** ise → `else` bloğu çalışır
+- Koşul **true** ise → `if` bloğu çalışır.
+- Koşul **false** ise → `else` bloğu çalışır.
 
 ### Temel Kullanım
 ```java
@@ -145,11 +145,11 @@ Birden fazla olası durum varsa **`else if`** yapısı kullanılır.
 Bu yapı, koşulları **üstten alta doğru sırayla** kontrol eder.
 
 ### Çalışma Mantığı
-- İlk `if` kontrol edilir
-- Eğer **false** ise `else if` bloklarına geçilir
-- **İlk true olan blok çalışır**
-- Java o noktada **durur**, alttaki koşullara bakmaz
-- Hiçbiri true değilse `else` çalışır
+- İlk `if` kontrol edilir.
+- Eğer **false** ise `else if` bloklarına geçilir.
+- **İlk true olan blok çalışır**.
+- Java o noktada **durur**, alttaki koşullara bakmaz.
+- Hiçbiri true değilse `else` çalışır.
 
 ### Örnek Kullanım
 ```java
@@ -240,6 +240,8 @@ public class Main {
             }
         }
 
+        // Burada else kullanılmadı peki zorunlu mu ? (Altta Anlatıldı)
+
         scanner.close();
     }
 }
@@ -253,9 +255,9 @@ public class Main {
 Bazı durumlarda sadece `if` kullanmak yeterlidir.
 
 ### Ne Anlama Gelir?
-- `if` → Koşul **sağlanırsa** çalışır
-- `else` → Koşul **sağlanmazsa** çalışır
-- Eğer yapılacak **ekstra bir işlem yoksa**, `else` yazmaya gerek yoktur
+- `if` → Koşul **sağlanırsa** çalışır.
+- `else` → Koşul **sağlanmazsa** çalışır.
+- Eğer yapılacak **ekstra bir işlem yoksa**, `else` yazmaya gerek yoktur.
 
 ### Örnek Kullanım 
 ```java
@@ -356,9 +358,9 @@ public class Main {
 Çok sayıda `else if` yerine **daha okunabilir** bir yapı sunar.
 
 ### Ne İşe Yarar?
-- Tek bir değişkenin **farklı değerlerini** kontrol eder
-- Kodun daha **temiz ve anlaşılır** olmasını sağlar
-- Genellikle **sabit değerler** (int, char, String) ile kullanılır
+- Tek bir değişkenin **farklı değerlerini** kontrol eder.
+- Kodun daha **temiz ve anlaşılır** olmasını sağlar.
+- Genellikle **sabit değerler** (int, char, String) ile kullanılır.
 
 ### Temel Yapı
 ```java
@@ -376,12 +378,12 @@ switch (deger) {
 
 ### Nasıl Çalışır?
 
-- `switch` içine verilen değer kontrol edilir  
-- Bu değer, `case` ifadeleriyle **tek tek karşılaştırılır**  
-- Eşleşme bulunduğunda ilgili `case` bloğu çalışır  
-- `break` kullanılırsa `switch` bloğundan **çıkılır**
+- `switch` içine verilen değer kontrol edilir.  
+- Bu değer, `case` ifadeleriyle **tek tek karşılaştırılır**.  
+- Eşleşme bulunduğunda ilgili `case` bloğu çalışır. 
+- `break` kullanılırsa `switch` bloğundan **çıkılır**.
 - kullanılmazsa o `case`'den sonraki tüm `case`'ler çalışır. (default dahil)
-- Hiçbir `case` eşleşmezse `default` bloğu çalışır
+- Hiçbir `case` eşleşmezse `default` bloğu çalışır.
 
 #### Örnek Kullanım
 ```java
@@ -416,7 +418,7 @@ public class Main {
 
 > **NOT**  
 > `break` zorunlu değildir, ancak **çoğu durumda mutlaka kullanılmalıdır**.  
-> `break` yazılmazsa, eşleşen `case` çalıştıktan sonra **altındaki tüm case blokları da çalışır** (fall-through). (default dahil) 
+> `break` yazılmazsa, eşleşen `case` çalıştıktan sonra **altındaki tüm case blokları da çalışır**. (fall-through) (default dahil)<br>
 > Bu durum genellikle **istenmeyen sonuçlara** yol açar. 
 
 #### Örnek Kullanım (break'siz)
