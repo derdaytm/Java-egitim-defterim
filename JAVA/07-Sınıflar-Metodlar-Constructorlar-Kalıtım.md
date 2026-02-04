@@ -292,3 +292,252 @@ public class Test {
     }
 }
 ```
+
+---
+
+## Neden Her Zaman `public` Kullanmamalıyız?
+
+`public` ile tanımlanan özelliklere **her yerden serbestçe erişilebilir**.  
+Bu ilk başta kolay görünür ama **ciddi sorunlara yol açar**.
+
+## 1️⃣ Kontrolsüz Veri Değişimi
+
+`public` özellikler:
+- İstediğimiz değeri,
+- İstediğimiz yerden,
+- Hiçbir kontrol olmadan,
+değiştirmemize izin verir.
+
+```java
+araba1.kilometre = -500;   // Mantıksız ama izin verilir
+araba1.fiyat = 0;         // Hata ama engel yok
+araba1.motorHacmi = -1.6; // Sorunlu
+```
+> **NOT** : Buradaki kodlar `test` classının içine yazılmıştır.
+
+## 2️⃣ Class Kontrolünü Kaybeder
+
+Bir class:
+- Kendi verisini **korumalıdır**.
+- Nasıl değiştirileceğine **kendisi karar vermelidir**.
+
+Ama `public` olunca:
+- Class sadece bir **veri deposuna** dönüşür.
+- İş mantığı class dışına **dağılır**.
+
+## 3️⃣ Hatalı Kullanıma Açık Hale Gelir
+
+Başka biri (veya ileride sen):
+- Özellikleri **yanlış** kullanılabilir.
+- Değerin **nerede değiştiğini** takip edilemez.
+- Hata ayıklama (**debug**) süreci zorlaşır.
+
+## 4️⃣ Gerçek Hayat Mantığına Aykırı
+
+Gerçek hayatta:
+- Arabanın kilometresini **herkes kafasına göre** değiştiremez.
+- Fiyat **kontrolsüz şekilde** sıfırlanamaz.
+
+Ama `public` olunca:
+> “Al, istediğini yap” demiş oluruz.
+
+---
+
+## Çözüm: Encapsulation (Kapsülleme)
+
+`public` kullanımının yol açtığı sorunları çözmek için  
+**Encapsulation (kapsülleme)** yaklaşımını uygularız.
+
+Encapsulation’ın temel amacı:
+> **Veriyi gizlemek ve erişimi kontrol altına almak**
+
+## Encapsulation Nedir?
+
+Encapsulation, bir class’ın:
+- İç detaylarını **dış dünyadan saklaması**.
+- Veriye doğrudan erişimi **engellemesi**.
+- Erişimin sadece **kontrollü yollarla** sağlanmasıdır.
+
+## Java’da Encapsulation Nasıl Uygulanır?
+
+Encapsulation’ı Java’da **adım adım** uygularız.  
+Bu konuyu daha net anlayabilmek için **4 bölümde** ele alacağız:
+
+1️⃣ **Özellikleri `private` yapma**  
+→ Veriyi dış dünyadan gizleriz  
+
+2️⃣ **Set metodu (setter)**  
+→ Veriye kontrollü şekilde değer atarız  
+
+3️⃣ **Get metodu (getter)**  
+→ Veriyi güvenli şekilde okuruz  
+
+4️⃣ **Kapsamlı örnek**  
+→ Tüm yapıyı tek bir örnek üzerinde görürüz  
+
+Her bölüm bir öncekini tamamlar.  
+Şimdi ilk adımla başlayalım 👇
+
+---
+
+## 1️⃣ Özellikleri `private` Yapma
+
+Encapsulation’ın **ilk ve en önemli adımı**,  
+class içindeki özellikleri `private` yapmaktır.
+
+`private` yapılan özelliklere:
+- Class **dışından doğrudan erişilemez**.
+- Sadece **kendi class’ı içinden** erişilebilir.
+  
+## Neden `private` Yapıyoruz?
+
+Çünkü:
+- Verinin kontrolsüz değişmesini istemeyiz.
+- Hatalı değer atamalarını engellemek isteriz.
+- Kontrol class’ın kendisinde olmalıdır.
+
+## Private kullanımı 
+
+### Araba Class’ı
+
+```java
+public class Araba {
+
+    private String marka;
+    private String model;
+    private String renk;
+
+    private int kapıSayisi;
+    private int kilometre;
+    private int motorHacmi;
+
+    private double fiyat;
+
+    private boolean calisiyorMu;
+}
+```
+
+Şuan `test` classın da bu verilere artık erişemeyiz. Yani artık kontrol class'ın kendisinde.
+
+### Örnek Kullanım 
+
+<img width="732" height="375" alt="image" src="https://github.com/user-attachments/assets/f2e1625d-5ec4-47cc-9a6c-cc303c8c1a64" />
+
+Burada da görüldüğü üzere bahsettiğimiz hatayı aldık.
+
+Şimdi bu hataları çözmek için 2.aşamaya geçelim.
+
+---
+
+## 2️⃣ Set Metodu (Setter)
+
+`set` metodu, `private` yapılmış bir özelliğe **kontrollü şekilde değer atamak** için kullanılır.
+
+## Set Metodu Ne İşe Yarar?
+
+- `private` özelliğe doğrudan erişimi engeller.
+- Değer atamayı **class’ın kontrolüne** bırakır.
+- **class** set kavramı ile kontrollü bir erişim sağlar.
+- Böylelikle hatalı veya mantıksız değerleri **filtreleyebilir**.
+  
+## Set Metodu Nasıl Yazılır?
+
+### Genel Yapı
+```java
+public void setDegiskenAdi(veriTipi deger) {
+    this.deger = deger;
+}
+```
+
+Burada kullandığımız set'in aslında bir metod olduğunu unutmayalım.
+
+Burada aslında metod kullandık. 
+
+### Neden `this` Kullanırız?
+
+Class içindeki özellik ile metoda gelen parametrenin **adı aynı olduğunda**, Java hangisini kastettiğimizi **ayırt edemez**.
+
+Bu karışıklığı önlemek için:
+- `this.deger` ile **class’a ait olanı**,
+- `this` olmadan **parametreyi**(test'ten gönderilen), işaret ederiz.
+
+## Set kullanımı 
+
+### Araba Class’ı
+
+```java
+public class Araba {
+
+    private String marka;
+    private String model;
+    private String renk;
+
+    private int kapıSayisi;
+    private int kilometre;
+    private int motorHacmi;
+
+    private double fiyat;
+
+    private boolean calisiyorMu;
+
+    // SETTER METODLARI
+
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setRenk(String renk) {
+        this.renk = renk;
+    }
+
+    // Gönderilen veriyi kontrol edebilir ve bir filtreden geçirebiliriz.
+
+    public void setKapiSayisi(int kapiSayisi) {
+        if (kapiSayisi > 0) {
+            this.kapiSayisi = kapiSayisi;
+        } else {
+            System.out.println("Hata: Kapı sayısı 0 veya negatif olamaz!");
+        }
+    }
+    
+    public void setKilometre(int kilometre) {
+        if (kilometre >= 0) {
+            this.kilometre = kilometre;
+        } else {
+            System.out.println("Hata: Kilometre değeri negatif olamaz!");
+        }
+    }
+    
+    public void setMotorHacmi(int motorHacmi) {
+        if (motorHacmi > 0) {
+            this.motorHacmi = motorHacmi;
+        } else {
+            System.out.println("Hata: Motor hacmi 0 veya negatif olamaz!");
+        }
+    }
+    
+    public void setFiyat(double fiyat) {
+        if (fiyat > 0) {
+            this.fiyat = fiyat;
+        } else {
+            System.out.println("Hata: Fiyat 0 veya negatif olamaz!");
+        }
+    }
+
+    public void setCalisiyorMu(boolean calisiyorMu) {
+        this.calisiyorMu = calisiyorMu;
+    }
+}
+```
+
+<img width="764" height="500" alt="image" src="https://github.com/user-attachments/assets/09ceca31-c4f9-4aaf-b816-f7c9b07a7a47" />
+
+Şu anda görüldüğü üzere atama yapılırken hiçbir sorunla karşılaşmıyoruz ancak veriyi okumaya yani konsola yazdırmaya çalışırken hata alıyoruz.
+
+Şimdi bu hatayı çözmek için 3.aşamaya geçelim.
+
+
