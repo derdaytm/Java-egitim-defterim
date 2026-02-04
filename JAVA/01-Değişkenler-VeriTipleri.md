@@ -186,7 +186,7 @@ int total-count;  // özel karakter kullanılamaz
 - **int** → En sık kullanılan tam sayı türü
 - **long** → Çok büyük tam sayılar için kullanılır
 
-#### Ondalıklı Sayı Türleri
+#### Ondalıklı Sayı Türleri (değerler virgül ile değil nokta ile yazılmalıdır)
 - **float** → Ondalıklı sayılar (daha az hassas)
 - **double** → Ondalıklı sayılar (daha hassas, varsayılan)
 
@@ -373,7 +373,7 @@ System.out.println(b);
 
 ---
 
-### float Veri Tipi
+### float Veri Tipi (değerler virgül ile değil nokta ile yazılmalıdır)
 
 - `float`, Java’da **ondalıklı (virgüllü) sayıları** saklamak için kullanılır.
 - Bellekten tasarruf edilmesi gereken durumlarda tercih edilir.
@@ -407,7 +407,7 @@ System.out.println(Float.MAX_VALUE);
 
 ---
 
-### double Veri Tipi
+### double Veri Tipi (değerler virgül ile değil nokta ile yazılmalıdır)
 
 - `double`, Java’da **ondalıklı (virgüllü) sayıları** saklamak için kullanılan  ve varsayılan veri tipidir.
 - `float`’a göre **daha hassas** hesaplamalar yapar. Genelde double tercih edilir.
