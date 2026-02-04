@@ -17,6 +17,9 @@ erişimBelirleyici ekstraÖzellikler geriDönüşTipi metodAdı(parametreler) {
 }
 ```
 
+>**NOT**:
+>Aşağıdaki bazı açıklamalar bilgi amaçlı verilmiştir. Kullanılacak kalıba açıklamaların sonunda yer verilmiştir.
+
 - **Erişim Belirleyici:** Metodun hangi sınıflardan erişilebileceğini belirler.
     - **public:** Metoda her yerden erişilebilir.
     - **private:** Metoda sadece tanımlandığı sınıf içinden erişilebilir.
@@ -52,7 +55,7 @@ erişimBelirleyici ekstraÖzellikler geriDönüşTipi metodAdı(parametreler) {
 > **NOT**:
 > Şimdilik sabit bir kalıp kullanacağız :
 > ```java
-> public static void fonksiyon_adı(){}`
+> public static void fonksiyon_adı(){}
 > ```
 
 #### Örnek Kullanımı
@@ -170,14 +173,14 @@ public static void main(String[] args) {
 Metod overloading, **aynı isimli bir metodun birden fazla farklı parametre ile tanımlanması**dır.  
 Java, **parametre sayısı veya türüne göre** hangi metodun çağrılacağını belirler.
 
-- **Metod adı aynı** olmalıdır  
-- **Parametre listesi farklı** olmalıdır (sayısı veya türü değişmeli)  
-- Geri dönüş tipi **farklı olabilir**, ancak dönüş tipi tek başına overload için yeterli değildir
+- **Metod adı aynı** olmalıdır.  
+- **Parametre listesi farklı** olmalıdır. (sayısı veya türü değişmeli)  
+- Geri dönüş tipi **farklı olabilir**, ancak dönüş tipi tek başına overload için yeterli değildir. (metod öncesinde `double`, `int` gibi değerler geri dönüş tipidir)
 
 ### Neden Kullanılır?
-- Kod tekrarını azaltmak  
-- Aynı işlemi farklı veri türleri veya farklı sayıda veri ile yapmak  
-- Daha okunabilir ve esnek kod yazmak
+- Kod tekrarını azaltmak.  
+- Aynı işlemi farklı veri türleri veya farklı sayıda veri ile yapmak.  
+- Daha okunabilir ve esnek kod yazmak.
 
 ### Örnek Kullanım
 
@@ -203,6 +206,9 @@ public static void main(String[] args) {
     System.out.println(topla(2.5, 3.5));   // 6.0 → double parametreli metod çalışır
 }
 ```
+
+>**NOT**:
+>Burada hangi metodu kullanacağını java kendi belirlemektedir.
 
 ### Örnek Kullanım
 ```java
@@ -235,7 +241,7 @@ public static void main(String[] args) {
 
 ### Özellikleri
 - Kod bloğu sona erdiğinde **değişken bellekte yok edilir**.  
-- Aynı isimde başka bloklarda değişken tanımlanabilir (bloklar birbirinden bağımsızdır).  
+- Aynı isimde başka bloklarda değişken tanımlanabilir. (bloklar birbirinden bağımsızdır)
 - Genellikle metodlar, döngüler veya if-else bloklarında kullanılır.  
 
 ---
