@@ -571,8 +571,8 @@ String a = "Java" +
 ```
 
 > **NOT**: <br>
-> - `\t` => String içinde kullanılarak 1 tab boşluğu bırakır.
-> - `\n` => String içinde kullanılarak alt satıra geçmeyi sağlar.
+> - `\t` => String içinde kullanılarak 1 tab boşluğu bırakır. (Tırnak içinde kullanılır)
+> - `\n` => String içinde kullanılarak alt satıra geçmeyi sağlar. (Tırnak içinde kullanılır)
 
 ---
 
