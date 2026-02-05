@@ -534,10 +534,146 @@ public class Araba {
 }
 ```
 
+### Test Class’ı
+
 <img width="764" height="500" alt="image" src="https://github.com/user-attachments/assets/09ceca31-c4f9-4aaf-b816-f7c9b07a7a47" />
 
 Şu anda görüldüğü üzere atama yapılırken hiçbir sorunla karşılaşmıyoruz ancak veriyi okumaya yani konsola yazdırmaya çalışırken hata alıyoruz.
 
 Şimdi bu hatayı çözmek için 3.aşamaya geçelim.
 
+---
+
+## 3️⃣ Get Metodu (Getter)
+
+`get` metodu, `private` yapılmış bir özelliğin **değerini okumak** için kullanılır.
+
+Değeri **değiştirmez**, sadece **geri döndürür**.
+
+## Get Metodu Ne İşe Yarar?
+
+- `private` özelliklere **doğrudan erişilemez**.
+- Ancak bu değerlere **ihtiyaç duyarız**.
+- Getter metodları, bu değerlere **okuma izni** sağlar.
+
+> **Setter** → yazmak için  
+> **Getter** → okumak için
+
+## Get Metodu Nasıl Yazılır?
+
+### Genel Yapı
+```java
+public veriTipi getDegiskenAdi() {
+    return degiskenAdi;
+}
+```
+
+> ***NOT**:
+>
+> `get` bir anahtar kelime değildir.
+>  Yazılan yapı, `set`'tede dediğimiz gibi **normal bir java metodudur.**
+
+## Get Kullanımı
+
+### Araba Class’ı
+
+```java
+public class Araba {
+
+    private String marka;
+    private String model;
+    private String renk;
+
+    private int kapıSayisi;
+    private int kilometre;
+    private int motorHacmi;
+
+    private double fiyat;
+
+    private boolean calisiyorMu;
+
+/// SETTER metodlarını karışıklık olmaması için yazmadık.
+
+/// GETTER metodları
+
+public String getMarka() {
+    return marka;
+}
+
+public String getModel() {
+    return model;
+}
+
+public String getRenk() {
+    return renk;
+}
+
+public int getKapiSayisi() {
+    return kapiSayisi;
+}
+
+public int getKilometre() {
+    return kilometre;
+}
+
+public int getMotorHacmi() {
+    return motorHacmi;
+}
+
+public double getFiyat() {
+    return fiyat;
+}
+
+public boolean isCalisiyorMu() {
+    return calisiyorMu;
+}
+````
+
+> **NOT**:
+>
+> `boolean` tiplerde getter metodları genellikle `get` yerine `is` ile başlar.
+
+### Test Class’ı
+
+```java
+public class Test {
+    public static void main(String[] args) {
+
+        Araba araba1 = new Araba();
+
+        araba1.setMarka("renault");
+        araba1.setModel("Clio");
+        araba1.setRenk("Beyaz");
+        araba1.setKapiSayisi(5);
+        araba1.setKilometre(12504);
+        araba1.setMotorHacmi(1500);
+        araba1.setFiyat(154000.12);
+        araba1.setCalisiyorMu(true);
+
+        System.out.println("Marka : " + araba1.getMarka());
+        System.out.println("Model : " + araba1.getModel());
+        System.out.println("Renk : " + araba1.getRenk());
+        System.out.println("Kapı Sayısı : " + araba1.getKapiSayisi());
+        System.out.println("Kilometre : " + araba1.getKilometre());
+        System.out.println("Motor Hacmi : " + araba1.getMotorHacmi());
+        System.out.println("Fiyat : " + araba1.getFiyat());
+        System.out.println("Çalışıyor Mu : " + araba1.isCalisiyorMu());
+
+    }
+}
+```
+
+**Tarayıcı Çıktısı**
+
+<img width="573" height="224" alt="image" src="https://github.com/user-attachments/assets/8b87dab4-504b-4991-a1f3-a751bf9f1fd7" />
+
+Böylelikle hem atama yapabilir hem okuma yapabilir hemde güvenli bir hale getirdik.
+
+Böylece veriye doğrudan müdahale edilmeden,
+hem kontrollü şekilde değer atayabilir,
+hem de güvenli biçimde okuyabiliriz.
+
+Şimdi son olarak 4.aşamada kapsamlı bir örnek inceleyelim.
+
+---
 
