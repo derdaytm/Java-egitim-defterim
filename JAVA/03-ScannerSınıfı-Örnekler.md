@@ -197,6 +197,53 @@ public class Main {
     }
 }
 ```
+---
+
+## Egzersiz
+
+### 1. Beden Kitle İndeksi Hesaplama
+
+Kullanıcıdan aldığınız boy ve kilo değerlerine göre kullanıcının beden kitle indeksini bulun.
+(Beden Kitle Endeksi : Kilo / Boy(m) * Boy(m))
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Kullanıcıdan Veri Alma
+        System.out.println("------------------------");
+        System.out.println("Beden Kitle Endeksi Hesaplama Uygulamasını Hoşgeldiniz");
+        System.out.println("------------------------");
+        System.out.print("Lütfen kilonuzu giriniz : ");
+            Double kilo = scanner.nextDouble();
+
+        System.out.print("Lütfen boyunuzu metre cinsinden giriniz : ");
+            Double boy = scanner.nextDouble();
+
+        Double endeks = kilo / (boy * boy);
+
+        // Ekrana Çıktı Basma
+        System.out.println("------------------------");
+        System.out.println("Girilen Veriler :");
+        System.out.println("Kilo : " + kilo);
+        System.out.println("Boy : " + boy);
+        System.out.println("------------------------");
+        System.out.printf("Beden Kitle Endeksiniz : " + endeks);
+    }
+}
+```
+</details>
+
+### 2. Kilometreye Göre Toplam Ödenecek Tutar Hesaplama
+
+Bir aracın kilometrede ne kadar yaktığı ve kaç kilometre yol yaptığı bilgilerini alın ve sürücünün toplam ne kadar ödemesi gerektiğini hesaplayınız.
 
 ---
 
