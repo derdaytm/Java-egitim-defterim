@@ -199,6 +199,114 @@ public class Main {
 ```
 ---
 
+## Ekstralar
+
+> Bu başlık altında, egzersizlerde kullandığımız ancak konu anlatımı sırasında anlatmadığımız veya detaylı açıklamadığımız kavramları ele alacağız.  
+> Böylece örneklerde geçen yeni ifadeler veya yapılar eksiksiz şekilde anlaşılmış olacak.
+
+---
+
+### printf()
+
+`printf`, formatlı (biçimlendirilmiş) çıktı vermek için kullanılır.
+
+#### Ne İşe Yarar?
+
+- Ondalıklı sayıları belirli basamakta göstermek.
+- Metni hizalamak.
+- Sayıları düzenli biçimde yazdırmak.
+- Profesyonel çıktı üretmek.
+
+
+#### Genel Yapı
+
+```java
+System.out.printf("format ifadesi", degisken);
+```
+
+#### Format İfadeleri
+
+| İfade | Anlamı |
+|-------|--------|
+| `%d`  | Tam sayı (`int`) |
+| `%f`  | Ondalıklı sayı (`double` / `float`) |
+| `%.2f`| Virgülden sonra 2 basamak gösterir |
+| `%s`  | String (metin) |
+| `%b`  | boolean |
+
+#### Kapsamlı Örnek – printf Tüm Format İfadeleri
+
+Bu örnekte `%d`, `%f`, `%.2f`, `%s`, `%b` ifadelerinin hepsini birlikte kullanıyoruz. Burada böylelikle ondalıklı sayıların kaç basamağının gözükeceğini belirleriz.
+
+##### Örnek Kod
+
+```java
+public class Test {
+    public static void main(String[] args) {
+
+        String ad = "Ahmet";
+        int yas = 25;
+        double boy = 1.7564;
+        boolean ogrenciMi = true;
+
+        System.out.printf(
+            "Ad: %s | Yaş: %d | Boy: %.2f | Öğrenci mi: %b",
+            ad, yas, boy, ogrenciMi
+        );
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="607" height="49" alt="image" src="https://github.com/user-attachments/assets/7ce7dd5c-2ad6-40a7-9237-6d034af5dd7b" />
+
+---
+
+### Math.pow()
+
+`Math.pow()` iki sayının **üssünü almak** için kullanılan hazır (built-in) bir Java metodudur.
+
+#### Ne İşe Yarar?
+
+Bir sayının başka bir sayı kuvvetini hesaplar.
+
+#### Genel Yapı
+
+```java
+double sonuc = Math.pow(taban, us); // double kullanılması zorunludur.
+```
+
+#### Örnek Kullanım
+```java
+double sonuc = Math.pow(2, 3);
+System.out.println(sonuc); // 8
+```
+
+---
+
+### Math.sqrt()
+
+`Math.sqrt()` bir sayının **karekökünü almak** için kullanılan hazır (built-in) bir Java metodudur.
+
+#### Ne İşe Yarar?
+
+Bir sayının **pozitif karekökünü** hesaplar.
+
+#### Genel Yapı
+
+```java
+double sonuc = Math.sqrt(sayi); // double kullanılması zorunludur.
+```
+
+#### Örnek Kullanım 
+```java
+double sonuc = Math.sqrt(25);
+System.out.println(sonuc); // 5.0
+```
+
+---
+
 ## Egzersiz
 
 ### 1. Beden Kitle İndeksi Hesaplama
@@ -235,15 +343,94 @@ public class Test {
         System.out.println("Kilo : " + kilo);
         System.out.println("Boy : " + boy);
         System.out.println("------------------------");
-        System.out.printf("Beden Kitle Endeksiniz : " + endeks);
+        System.out.printf("Beden Kitle Endeksiniz :  %.2f", endeks); 
     }
 }
 ```
+
+**Konsol Çıktısı**
+
+<img width="596" height="266" alt="image" src="https://github.com/user-attachments/assets/67b734fd-7da2-4432-9f29-8a32cd4135c4" />
+
 </details>
 
 ### 2. Kilometreye Göre Toplam Ödenecek Tutar Hesaplama
 
 Bir aracın kilometrede ne kadar yaktığı ve kaç kilometre yol yaptığı bilgilerini alın ve sürücünün toplam ne kadar ödemesi gerektiğini hesaplayınız.
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("------------------------");
+        System.out.print("Aracınız kilometrede kaç kuruş yakıyor ? (Örnek : 0,32) : "); // print kullanma sebebimiz, kullanıcıdan alınacak değerin
+                                                                                        // bir alt satıra değil, mesajın hemen yanına yazılmasını sağlamaktır.
+                                                                                        // println kullansaydık imleç bir alt satıra geçerdi.
+        double kurus = input.nextDouble();
+
+        System.out.print("Aracınızla kaç kilometre yol gittiniz : ");
+            double km = input.nextDouble();
+
+        double tutar = kurus * km;
+
+        System.out.println("------------------------");
+        System.out.printf("Toplam ödemeniz gereken tutar : %.2f", tutar);
+
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="567" height="141" alt="image" src="https://github.com/user-attachments/assets/84274297-46bb-462b-9dd2-b317b28fa0af" />
+
+</details>
+
+### 3. Dik Üçgenin Hipotenüsü Bulma
+
+Dik üçgenin hipotenüsünü (en büyük kenarını) bulan programı yazınız. (hipotenüs = (a kenarı)² + (b kenarı)²)
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("----------------------------------");
+        System.out.println("Hipotenüs Hesaplama Uygulamasına Hoşgeldiniz...");
+        System.out.println("----------------------------------");
+        System.out.print("Lütfen 1.kenarı giriniz : " );
+            int kenar1 = input.nextInt();
+
+        System.out.print("Lütfen 2.kenarı giriniz : ");
+            int kenar2 = input.nextInt();
+
+        double hipotenüs = Math.pow(kenar1, 2) + Math.pow(kenar2, 2);
+        hipotenüs = Math.sqrt(hipotenüs);
+
+        System.out.println("----------------------------------");
+        System.out.printf("Hipotenüs uzunluğu : %.0f", hipotenüs);
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="536" height="185" alt="image" src="https://github.com/user-attachments/assets/4c5d3a54-9477-48cb-a277-908b8acc29bf" />
+
+</details>
 
 ---
 
