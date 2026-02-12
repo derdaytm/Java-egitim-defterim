@@ -39,6 +39,10 @@
 - Scanner Sınıfı - Tüm veri Tiplerini Kullanan Örnek
 - Scanner ile Boşluk Kullanarak Veri Girişi
 - Dummy Scanner Kullanımı (Sayıdan Sonra String Okuma)
+- Ekstralar
+  - System.out.printf()
+  - Math.pow()
+  - Math.sqrt()
 
 ## [Koşullu Durumlar ve Kod Blokları](JAVA/04-KoşulluDurumlar-KodBlokları.md)
 - Kod Blokları
