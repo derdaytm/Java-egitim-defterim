@@ -434,6 +434,47 @@ public class Test {
 
 ---
 
+### 4. Dairenin Alan ve Çevresini Hesaplama  
+Kullanıcıdan yarıçap değerini alın ve dairenin alanını ile çevresini hesaplayınız.  
+(Alan = πr², Çevre = 2πr)
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("----------------------------------");
+        System.out.println("Hipotenüs Hesaplama Uygulamasına Hoşgeldiniz...");
+        System.out.println("----------------------------------");
+        System.out.print("Lütfen 1.kenarı giriniz : " );
+            int kenar1 = input.nextInt();
+
+        System.out.print("Lütfen 2.kenarı giriniz : ");
+            int kenar2 = input.nextInt();
+
+        double hipotenüs = Math.pow(kenar1, 2) + Math.pow(kenar2, 2);
+        hipotenüs = Math.sqrt(hipotenüs);
+
+        System.out.println("----------------------------------");
+        System.out.printf("Hipotenüs uzunluğu : %.0f", hipotenüs);
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="536" height="185" alt="image" src="https://github.com/user-attachments/assets/4c5d3a54-9477-48cb-a277-908b8acc29bf" />
+
+</details>
+
+---
+
 ### 📚 Konu Akışı
 
 **⬅️ Önceki:** [**Temel Operatörler**](02-Temel-Operatörler.md)   
