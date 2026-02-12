@@ -206,7 +206,7 @@ public class Main {
 
 ---
 
-### printf()
+### System.out.printf()
 
 `printf`, formatlı (biçimlendirilmiş) çıktı vermek için kullanılır.
 
