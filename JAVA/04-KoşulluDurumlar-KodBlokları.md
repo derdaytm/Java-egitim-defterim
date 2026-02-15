@@ -455,7 +455,199 @@ public class Main {
 
 <img width="509" height="152" alt="image" src="https://github.com/user-attachments/assets/16712e8a-8ee0-4068-a8af-d4b6be955c25" />
 
+---
 
+## Egzersiz
+
+### Girilen 3 Sayıdan Maksimum Sayıyı Bulma
+
+Kullanıcıdan alınan 3 sayıdan en büyük olanı bulan ve konsola yazdıran programı yazınız.
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("----------------------------");
+        System.out.println("3 Sayı Arasından En Büyüğü Bulma Programı");
+        System.out.println("----------------------------");
+        
+        System.out.print("Lütfen 1.sayınızı giriniz : ");
+            int sayi1 = input.nextInt();
+        System.out.print("Lütfen 2.sayınızı giriniz : ");
+            int sayi2 = input.nextInt();
+        System.out.print("Lütfen 3.sayınızı giriniz : ");
+            int sayi3 = input.nextInt();
+            
+        if (sayi1 > sayi2) {
+            if (sayi3 > sayi1) {
+                System.out.println("En Büyük Sayı :" + sayi3);
+            } else {
+                System.out.println("En Büyük Sayı : " + sayi1);
+            }
+        } else {
+            if (sayi2 > sayi3) {
+                System.out.println("En Büyük Sayı : " + sayi2);
+            } else {
+                System.out.println("En Büyük Sayı : " + sayi3);
+            }
+        }
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="528" height="154" alt="image" src="https://github.com/user-attachments/assets/e1adcc5a-3c16-426c-a962-ae0fa5b0fb96" />
+
+</details>
+
+### Koşullarla Beden Kitle İndeksi Hesaplama
+
+Kullanıcıdan alınan boy ve kilo değerlerine göre BKİ (beden kitle indeksini) hesaplayın ve aşağıda belirtilen koşullara göre konsola çıktı yazdırın.
+(BKİ = Kilo / Boy * Boy)
+BKİ < 18.5 = Zayıf
+18.5 < BKİ < 25 = Normal
+25 < BKİ < 30 = Fazla kilolu
+30 < BKİ = Obez
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("--------------------------------");
+        System.out.println("Beden Kitle İndeksi Hesaplayan Program");
+        System.out.println("--------------------------------");
+
+        System.out.print("Lütfen kilonuzu yazınız : ");
+            double kilo = input.nextDouble();
+        System.out.print("Lütfen boyunuzu metre cinsinden yazınız : ");
+            double boy = input.nextDouble();
+
+        double bki = kilo / (boy * boy);
+
+        if (bki < 0) {
+            System.out.println("Yanlış veri girdiniz. Program kapatılıyor...");
+        } else if (bki < 18.5) {
+            System.out.println("Zayıf");
+        } else if (bki < 25) {
+            System.out.println("Normal");
+        } else if (bki < 30) {
+            System.out.println("Fazla Kilolu");
+        } else {
+            System.out.println("Obez");
+        }
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="442" height="133" alt="image" src="https://github.com/user-attachments/assets/425fe648-96c9-4aaf-b190-edeff389e077" />
+
+</details>
+
+### Basit Hesap Makinesi
+
+`switch - case` yapısını kullanarak 4 işlem yapan bir hesap makinesi tasarlayın.
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        String islemler = "1.Toplama İşlemi\n"
+                         +"2.Çıkarma İşlemi\n"
+                         +"3.Çarpma İşlemi\n"
+                         +"4.Bölme İşlemi";
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("--------------------------");
+        System.out.println("Hesap Makinesi");
+        System.out.println("--------------------------");
+
+        System.out.println(islemler);
+        System.out.print("Lütfen İşlem Seçiniz : ");
+            int islem = input.nextInt();
+        System.out.println("--------------------------");
+
+        double sonuc;
+        int sayi1;
+        int sayi2;
+
+        switch (islem) {
+            case 1 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 + sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            case 2 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 - sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            case 3 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 * sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            case 4 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 / sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            default:
+                System.out.println("--------------------------");
+                System.out.println("Geçersiz değer girdiniz. Program kapatılıyor...");
+        }
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="494" height="282" alt="image" src="https://github.com/user-attachments/assets/39db3cbc-0c5f-49d0-8daa-c8a1da0557bb" />
+
+</details>
+ 
 ---
 
 ### 📚 Konu Akışı
