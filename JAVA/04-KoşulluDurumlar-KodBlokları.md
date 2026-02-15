@@ -455,6 +455,50 @@ public class Main {
 
 <img width="509" height="152" alt="image" src="https://github.com/user-attachments/assets/16712e8a-8ee0-4068-a8af-d4b6be955c25" />
 
+> **NOT**
+>
+> `switch` yapısında `String` kullanılıyorsa değerler **çift tırnak (" ")** içinde yazılmalıdır.  
+> Çünkü `String` veri tipi metinsel (kelime / cümle) ifade eder.
+
+### Örnek Kullanım
+
+```java
+String gun = "Pazartesi";
+
+switch (gun) {
+    case "Pazartesi":
+        System.out.println("Haftanın ilk günü");
+        break;
+    case "Cuma":
+        System.out.println("Haftanın son iş günü");
+        break;
+    default:
+        System.out.println("Geçersiz gün");
+}
+```
+
+> **NOT**
+>
+> `switch` yapısında `char` kullanılıyorsa değerler **tek tırnak (' ')** içinde yazılmalıdır.  
+> Çünkü `char` veri tipi yalnızca **tek bir karakter** tutar.
+
+### Örnek Kullanım
+
+```java
+char harf = 'A';
+
+switch (harf) {
+    case 'A':
+        System.out.println("Harf A");
+        break;
+    case 'B':
+        System.out.println("Harf B");
+        break;
+    default:
+        System.out.println("Tanımsız harf");
+}
+```
+
 ---
 
 ## Egzersiz
