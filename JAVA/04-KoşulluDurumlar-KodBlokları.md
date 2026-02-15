@@ -455,10 +455,9 @@ public class Main {
 
 <img width="509" height="152" alt="image" src="https://github.com/user-attachments/assets/16712e8a-8ee0-4068-a8af-d4b6be955c25" />
 
-> **NOT**
->
-> `switch` yapısında `String` kullanılıyorsa değerler **çift tırnak (" ")** içinde yazılmalıdır.  
-> Çünkü `String` veri tipi metinsel (kelime / cümle) ifade eder.
+### String ile Kullanmak
+`switch` yapısında `String` kullanılıyorsa değerler **çift tırnak (" ")** içinde yazılmalıdır.  
+Çünkü `String` veri tipi metinsel (kelime / cümle) ifade eder.
 
 ### Örnek Kullanım
 
@@ -477,10 +476,9 @@ switch (gun) {
 }
 ```
 
-> **NOT**
->
-> `switch` yapısında `char` kullanılıyorsa değerler **tek tırnak (' ')** içinde yazılmalıdır.  
-> Çünkü `char` veri tipi yalnızca **tek bir karakter** tutar.
+### Char ile Kullanmak
+`switch` yapısında `char` kullanılıyorsa değerler **tek tırnak (' ')** içinde yazılmalıdır.  
+Çünkü `char` veri tipi yalnızca **tek bir karakter** tutar.
 
 ### Örnek Kullanım
 
