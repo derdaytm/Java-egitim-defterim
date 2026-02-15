@@ -307,6 +307,23 @@ System.out.println(sonuc); // 5.0
 
 ---
 
+### Math.PI
+
+`Math.PI`, π (pi) sayısını temsil eden hazır (built-in) bir Java sabitidir.
+
+#### Ne İşe Yarar?
+
+Daire ve çember hesaplamalarında kullanılan  
+π sayısını (3.141592653589793...) hazır olarak verir.
+
+#### Genel Yapı
+
+```java
+double piDegeri = Math.PI; // double tipindedir.
+```
+
+---
+
 ## Egzersiz
 
 ### 1. Beden Kitle İndeksi Hesaplama
@@ -432,8 +449,6 @@ public class Test {
 
 </details>
 
----
-
 ### 4. Dairenin Alan ve Çevresini Hesaplama  
 Kullanıcıdan yarıçap değerini alın ve dairenin alanını ile çevresini hesaplayınız.  
 (Alan = πr², Çevre = 2πr)
@@ -447,29 +462,67 @@ import java.util.Scanner;
 public class Test {
     public static void main (String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner (System.in);
 
-        System.out.println("----------------------------------");
-        System.out.println("Hipotenüs Hesaplama Uygulamasına Hoşgeldiniz...");
-        System.out.println("----------------------------------");
-        System.out.print("Lütfen 1.kenarı giriniz : " );
-            int kenar1 = input.nextInt();
+        System.out.println("----------------------------");
+        System.out.println("Daire Alan ve Çevresini Hesaplama");
+        System.out.println("----------------------------");
 
-        System.out.print("Lütfen 2.kenarı giriniz : ");
-            int kenar2 = input.nextInt();
+        System.out.print("Lütfen dairenizin yarıçapını giriniz : ");
+            double yaricap = input.nextDouble();
 
-        double hipotenüs = Math.pow(kenar1, 2) + Math.pow(kenar2, 2);
-        hipotenüs = Math.sqrt(hipotenüs);
+        double alan = Math.PI * yaricap * yaricap;
+        double cevre = 2 * Math.PI * yaricap;
 
-        System.out.println("----------------------------------");
-        System.out.printf("Hipotenüs uzunluğu : %.0f", hipotenüs);
+        System.out.println("----------------------------");
+        System.out.printf("Dairenizin alanı : %.2f \n", alan);
+        System.out.printf("Dairenizin alanı : %.2f", cevre);
     }
 }
 ```
 
 **Konsol Çıktısı**
 
-<img width="536" height="185" alt="image" src="https://github.com/user-attachments/assets/4c5d3a54-9477-48cb-a277-908b8acc29bf" />
+<img width="427" height="180" alt="image" src="https://github.com/user-attachments/assets/334d8036-22ac-462d-a442-0a63bb343a41" />
+
+</details>
+
+### 5. Girilen 3 Sayının Ortalamasını Hesaplama 
+Kullanıcıdan üç sayı alın ve bu sayıların aritmetik ortalamasını hesaplayınız.
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("-------------------------");
+        System.out.println("Aritmetik Ortalama Hesaplama");
+        System.out.println("-------------------------");
+
+        System.out.print("Lütfen 1.sayınızı giriniz : ");
+            double sayi1 = input.nextDouble();
+        System.out.print("Lütfen 2.sayınızı giriniz : ");
+            double sayi2 = input.nextDouble();
+        System.out.print("Lütfen 3.sayınızı giriniz : ");
+            double sayi3 = input.nextDouble();
+
+        double ortalama = (sayi1 + sayi2 + sayi3) / 3;
+
+        System.out.println("------------------------");
+        System.out.printf("Girdiğiniz sayıların ortalaması : %.2f", ortalama);
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="401" height="197" alt="image" src="https://github.com/user-attachments/assets/00a5d871-ce88-4c5f-9e6c-acf3ce23ca25" />
 
 </details>
 
