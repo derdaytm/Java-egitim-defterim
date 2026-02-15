@@ -654,8 +654,8 @@ Kullanıcıdan vize 1, vize 2 ve final notunu alarak bir harf hesaplama sistemi 
 1. Vizeler %30 etki edecektir.
 2. Final %40 etki edecektir.
 
-Not ortalaması 
-    90 ve üzeriyse = AA,
+Not ortalaması <br>
+    90 ve üzeriyse = AA, <br>
     85 - 90 arasıysa = BA, <br>
     80 - 85 arasıysa = BB, <br>
     75 - 80 arasıysa = CB, <br>
