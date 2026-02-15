@@ -521,6 +521,121 @@ do {
     System.out.println(i);
 } while (i < 5);
 ```
+---
+
+## Egzersiz
+
+#### 1. ATM Programı
+Döngü yardımıyla bir tane ATM programı yapalım.
+
+İşlemler : <br>
+1. işlem : Bakiye öğrenme <br>
+2. işlem : Para çekme <br>
+3. işlem : Para yatırma <br>
+Çıkış : q veya Q
+
+> **NOT**
+>
+> `scanner` metodunu kullanarak char ataması yapmak için aşağıdaki formül kullanılmaktadır. Diziler konusunda neden kullanıldığı detaylı anlaşılacaktır.
+> 
+> char islem = input.nextLine().charAt(0);
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner (System.in);
+
+        System.out.println("---------------------------");
+        System.out.println("Hesabınız Hoşgeldiniz");
+        System.out.println("---------------------------");
+
+        String islemler = "1. Bakiye öğrenme\n"
+                         +"2. Para çekme\n"
+                         +"3. Para yatırma\n"
+                         +"Çıkış için q'ya basınız\n";
+
+        double bakiye = 1000;
+        int tutar;
+        boolean sistemCalisiyorMu = true;
+
+        while (sistemCalisiyorMu) {
+            System.out.println(islemler);
+            System.out.print("Lütfen yapmak istediğiniz işlemi seçiniz : ");
+                String islem = input.next();
+            System.out.println("---------------------------");
+
+            switch (islem) {
+                case "1" :
+                    System.out.println("Güncel Bakiyeniz : " + bakiye);
+                    System.out.println("---------------------------");
+                    break;
+
+                case "2" :
+                    while (true) {
+                        System.out.print("Çekmek istediğiniz tutar : ");
+                            tutar = input.nextInt();
+
+                        if (tutar < bakiye) {
+                            bakiye -= tutar;
+
+                            System.out.println("---------------------------");
+                            System.out.println("Hesabınızdan " + tutar + " tl çekilmiştir");
+                            System.out.println("Güncel Bakiyeniz : " + bakiye);
+                            System.out.println("---------------------------");
+                            break;
+                        } else {
+                            System.out.println("Bakiyeniz yetersiz...");
+                            System.out.println("Lütfen geçerli bir tutar giriniz...");
+                        }
+                    }
+                    break;
+
+                case "3" :
+                    while (true) {
+                        System.out.print("Yatırmak istediğiniz tutar : ");
+                        tutar = input.nextInt();
+
+                        if (tutar > 0) {
+                            bakiye += tutar;
+
+                            System.out.println("---------------------------");
+                            System.out.println("Hesabınıza " + tutar + " tl yatırılmıştır");
+                            System.out.println("Güncel Bakiyeniz : " + bakiye);
+                            System.out.println("---------------------------");
+                            break;
+                        } else {
+                            System.out.println("Tutar 0 dan küçük olamaz...");
+                            System.out.println("Lütfen geçerli bir tutar giriniz...");
+                        }
+                    }
+                    break;
+
+
+                case "q" :
+                case "Q" :
+                    System.out.println("Çıkış yapılıyor...");
+                    System.out.println("İyi Günler...");
+                    sistemCalisiyorMu = false;
+                    break;
+
+                default:
+                    System.out.println ("Geçersiz değer girişi...");
+                    System.out.println("Tekrar Deneyiniz...");
+                    System.out.println("---------------------------");
+            }
+        }
+
+    }
+}
+```
+
+</details>
 
 ---
 
