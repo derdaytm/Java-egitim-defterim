@@ -674,70 +674,44 @@ import java.util.Scanner;
 public class Test {
     public static void main (String[] args) {
 
-        String islemler = "1.Toplama İşlemi\n"
-                         +"2.Çıkarma İşlemi\n"
-                         +"3.Çarpma İşlemi\n"
-                         +"4.Bölme İşlemi";
-
         Scanner input = new Scanner(System.in);
 
-        System.out.println("--------------------------");
-        System.out.println("Hesap Makinesi");
-        System.out.println("--------------------------");
+        System.out.println("-----------------------------");
+        System.out.println("Harf Hesaplama Programı");
+        System.out.println("-----------------------------");
 
-        System.out.println(islemler);
-        System.out.print("Lütfen İşlem Seçiniz : ");
-            int islem = input.nextInt();
-        System.out.println("--------------------------");
+        System.out.print("Lütfen 1. vize notunuzu giriniz : ");
+            int vize1 = input.nextInt();
+        System.out.print("Lütfen 2. vize notunuzu giriniz : ");
+            int vize2 = input.nextInt();
+        System.out.print("Lütfen final notunuzu giriniz : ");
+            int finall = input.nextInt();
+        System.out.println("-----------------------------");
 
-        double sonuc;
-        int sayi1;
-        int sayi2;
+        double ortalama = (vize1 * 0.3) + (vize2 * 0.3) + (finall * 0.4);
 
-        switch (islem) {
-            case 1 :
-                System.out.print("Lütfen 1.sayınızı giriniz : ");
-                    sayi1 = input.nextInt();
-                System.out.print("Lütfen 2.sayınızı giriniz : ");
-                    sayi2 = input.nextInt();
-                System.out.println("--------------------------");
-                sonuc = sayi1 + sayi2;
-                System.out.printf("Sonuç : %.0f", sonuc);
-                break;
+        System.out.printf("Ortalamanız : %.2f\n", ortalama);
 
-            case 2 :
-                System.out.print("Lütfen 1.sayınızı giriniz : ");
-                    sayi1 = input.nextInt();
-                System.out.print("Lütfen 2.sayınızı giriniz : ");
-                    sayi2 = input.nextInt();
-                System.out.println("--------------------------");
-                sonuc = sayi1 - sayi2;
-                System.out.printf("Sonuç : %.0f", sonuc);
-                break;
-
-            case 3 :
-                System.out.print("Lütfen 1.sayınızı giriniz : ");
-                    sayi1 = input.nextInt();
-                System.out.print("Lütfen 2.sayınızı giriniz : ");
-                    sayi2 = input.nextInt();
-                System.out.println("--------------------------");
-                sonuc = sayi1 * sayi2;
-                System.out.printf("Sonuç : %.0f", sonuc);
-                break;
-
-            case 4 :
-                System.out.print("Lütfen 1.sayınızı giriniz : ");
-                    sayi1 = input.nextInt();
-                System.out.print("Lütfen 2.sayınızı giriniz : ");
-                    sayi2 = input.nextInt();
-                System.out.println("--------------------------");
-                sonuc = sayi1 / sayi2;
-                System.out.printf("Sonuç : %.0f", sonuc);
-                break;
-
-            default:
-                System.out.println("--------------------------");
-                System.out.println("Geçersiz değer girdiniz. Program kapatılıyor...");
+        if ( ortalama > 90 ) {
+            System.out.println("Harf notunuz : AA");
+        } else if ( ortalama > 85 ) {
+            System.out.println("Harf notunuz : BA");
+        } else if ( ortalama > 80 ) {
+            System.out.println("Harf notunuz : BB");
+        } else if ( ortalama > 75 ) {
+            System.out.println("Harf notunuz : CB");
+        } else if ( ortalama > 70 ) {
+            System.out.println("Harf notunuz : CC");
+        } else if ( ortalama > 65 ) {
+            System.out.println("Harf notunuz : DC");
+        } else if ( ortalama > 60 ) {
+            System.out.println("Harf notunuz : DD");
+        } else if ( ortalama > 50 ) {
+            System.out.println("Harf notunuz : FD");
+        } else if ( ortalama > 0 ) {
+            System.out.println("Harf notunuz : FF");
+        } else {
+            System.out.println("Yanlış değer girişi yapılmıştır.");
         }
     }
 }
@@ -745,7 +719,7 @@ public class Test {
 
 **Konsol Çıktısı**
 
-<img width="494" height="282" alt="image" src="https://github.com/user-attachments/assets/39db3cbc-0c5f-49d0-8daa-c8a1da0557bb" />
+<img width="633" height="201" alt="image" src="https://github.com/user-attachments/assets/8572aa94-b939-45af-9ad2-13e3b6d534c0" />
 
 </details>
  
