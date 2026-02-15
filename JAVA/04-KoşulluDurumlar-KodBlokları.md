@@ -459,7 +459,7 @@ public class Main {
 
 ## Egzersiz
 
-### Girilen 3 Sayıdan Maksimum Sayıyı Bulma
+### 1. Girilen 3 Sayıdan Maksimum Sayıyı Bulma
 
 Kullanıcıdan alınan 3 sayıdan en büyük olanı bulan ve konsola yazdıran programı yazınız.
 
@@ -508,7 +508,7 @@ public class Test {
 
 </details>
 
-### Koşullarla Beden Kitle İndeksi Hesaplama
+### 2. Koşullarla Beden Kitle İndeksi Hesaplama
 
 Kullanıcıdan alınan boy ve kilo değerlerine göre BKİ (beden kitle indeksini) hesaplayın ve aşağıda belirtilen koşullara göre konsola çıktı yazdırın.
 (BKİ = Kilo / Boy * Boy)
@@ -560,7 +560,7 @@ public class Test {
 
 </details>
 
-### Basit Hesap Makinesi
+### 3. Basit Hesap Makinesi
 
 `switch - case` yapısını kullanarak 4 işlem yapan bir hesap makinesi tasarlayın.
 
@@ -648,7 +648,7 @@ public class Test {
 
 </details>
 
-### Gelişmiş Not Hesaplama
+### 4. Gelişmiş Not Hesaplama
 
 Kullanıcıdan vize 1, vize 2 ve final notunu alarak bir harf hesaplama sistemi yapın.
 1. Vizeler %30 etki edecektir.
