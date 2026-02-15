@@ -656,13 +656,13 @@ Kullanıcıdan vize 1, vize 2 ve final notunu alarak bir harf hesaplama sistemi 
 
 Not ortalaması 
     90 ve üzeriyse = AA,
-    85 - 90 arasıysa = BA,
-    80 - 85 arasıysa = BB,
-    75 - 80 arasıysa = CB,
-    70 - 75 arasıysa = CC,
-    65 - 70 arasıysa = DC,
-    60 - 65 arasıysa = DD,
-    50 - 60 arasıysa = FD,
+    85 - 90 arasıysa = BA, <br>
+    80 - 85 arasıysa = BB, <br>
+    75 - 80 arasıysa = CB, <br>
+    70 - 75 arasıysa = CC, <br>
+    65 - 70 arasıysa = DC, <br>
+    60 - 65 arasıysa = DD, <br>
+    50 - 60 arasıysa = FD, <br>
     50 altıysa = FF
     
 <details>
