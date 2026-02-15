@@ -647,6 +647,107 @@ public class Test {
 <img width="494" height="282" alt="image" src="https://github.com/user-attachments/assets/39db3cbc-0c5f-49d0-8daa-c8a1da0557bb" />
 
 </details>
+
+### Gelişmiş Not Hesaplama
+
+Kullanıcıdan vize 1, vize 2 ve final notunu alarak bir harf hesaplama sistemi yapın.
+1. Vizeler %30 etki edecektir.
+2. Final %40 etki edecektir.
+
+Not ortalaması 
+    90 ve üzeriyse = AA,
+    85 - 90 arasıysa = BA,
+    80 - 85 arasıysa = BB,
+    75 - 80 arasıysa = CB,
+    70 - 75 arasıysa = CC,
+    65 - 70 arasıysa = DC,
+    60 - 65 arasıysa = DD,
+    50 - 60 arasıysa = FD,
+    50 altıysa = FF
+    
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        String islemler = "1.Toplama İşlemi\n"
+                         +"2.Çıkarma İşlemi\n"
+                         +"3.Çarpma İşlemi\n"
+                         +"4.Bölme İşlemi";
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("--------------------------");
+        System.out.println("Hesap Makinesi");
+        System.out.println("--------------------------");
+
+        System.out.println(islemler);
+        System.out.print("Lütfen İşlem Seçiniz : ");
+            int islem = input.nextInt();
+        System.out.println("--------------------------");
+
+        double sonuc;
+        int sayi1;
+        int sayi2;
+
+        switch (islem) {
+            case 1 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 + sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            case 2 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 - sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            case 3 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 * sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            case 4 :
+                System.out.print("Lütfen 1.sayınızı giriniz : ");
+                    sayi1 = input.nextInt();
+                System.out.print("Lütfen 2.sayınızı giriniz : ");
+                    sayi2 = input.nextInt();
+                System.out.println("--------------------------");
+                sonuc = sayi1 / sayi2;
+                System.out.printf("Sonuç : %.0f", sonuc);
+                break;
+
+            default:
+                System.out.println("--------------------------");
+                System.out.println("Geçersiz değer girdiniz. Program kapatılıyor...");
+        }
+    }
+}
+```
+
+**Konsol Çıktısı**
+
+<img width="494" height="282" alt="image" src="https://github.com/user-attachments/assets/39db3cbc-0c5f-49d0-8daa-c8a1da0557bb" />
+
+</details>
  
 ---
 
