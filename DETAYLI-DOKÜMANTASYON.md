@@ -43,7 +43,8 @@
   - System.out.printf()
   - Math.pow()
   - Math.sqrt()
-
+  - Math.PI()
+  
 ## [Koşullu Durumlar ve Kod Blokları](JAVA/04-KoşulluDurumlar-KodBlokları.md)
 - Kod Blokları
 - Kodları Temiz Yazmak (Clean Code)
