@@ -4,7 +4,7 @@
 - Java **nesneye yönelik** bir programlama dilidir. (Javada herşey nesnedir)
 - Java’da **pointer yoktur**, **referans** kullanılır.
 - Java **geriye dönük uyumludur** (eski sürüm kodları yeni sürümlerde çalışır).
-- **Java hem derlenen hem yorumlanan bir dildir**:  
+- **Java hem derlenen hem yorumlanan bir dildir** :  
   Java kodu önce **bytecode**’a derlenir, sonra **JVM** tarafından çalıştırılır.
 
   - **Diğer dillerle farkı**:  
