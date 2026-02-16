@@ -523,6 +523,41 @@ do {
 ```
 ---
 
+## Ekstralar
+
+> Bu başlık altında, egzersizlerde kullandığımız ancak konu anlatımı sırasında anlatmadığımız veya detaylı açıklamadığımız kavramları ele alacağız.  
+> Böylece örneklerde geçen yeni ifadeler veya yapılar eksiksiz şekilde anlaşılmış olacak.
+
+---
+
+### String.equals()
+
+`equals()` metodu, iki metnin (String) **içeriklerini karşılaştırmak** için kullanılır.
+
+#### Ne İşe Yarar?
+
+- İki String değerin içerik olarak aynı olup olmadığını kontrol eder.
+- `==` operatörünün yaptığı gibi adres karşılaştırması yapmaz.
+- Kullanıcı adı, şifre, metin kontrolü gibi işlemlerde kullanılır.
+
+#### Neden `==` Kullanılmaz?
+
+`==` operatörü String ifadelerde:
+- Bellek adresini karşılaştırır.
+
+`equals()` metodu ise:
+- Metnin içeriğini karşılaştırır.
+
+Bu yüzden String karşılaştırmalarında **daima `equals()` kullanılmalıdır.**
+
+#### Genel Yapı
+
+```java
+metin1.equals(metin2);
+```
+
+---
+
 ## Egzersiz
 
 #### 1. ATM Programı
@@ -637,6 +672,282 @@ public class Test {
 
 </details>
 
+#### 2. Armstrong Sayı Bulma
+Kullanıcıdan alınan sayının armstrong olup olmadığını bulan bir program yazın.
+
+Armstrong sayı : N haneli bir sayının basamaklarının n'inci üstlerinin toplamı, sayının kendisine eşitse böyle sayılara Armstrong sayı denir.
+Örneğin :
+    407 = 4³ + 0³ + 7³ = 407
+
+> **NOT**
+>
+> Burada matematiksel olarak bir çok ifade ile yazım yapılabilir. Bu yüzden 2 tane örnek gösterilmiştir.
+>
+> `Math.pow()` her zaman double çıktı verir. Bu da 2. örnekte sorun yaşama ihtimali doğurur.
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("---------------------------------------");
+        System.out.println("Armstrong Sayı Bulma Programı");
+        System.out.println("---------------------------------------");
+
+        System.out.print("Lütfen sayınızı giriniz : ");
+        int sayi = input.nextInt();
+
+        int kontrol = sayi;
+        int basamakSayisi = 0;
+        int toplam = 0;
+
+        while (kontrol > 0) {
+            kontrol /= 10;
+            basamakSayisi++;
+        }
+
+        kontrol = sayi;
+
+        while (kontrol > 0) {
+
+            int basamak = kontrol % 10;
+            int usSonuc = 1;
+
+            for (int i = 0; i < basamakSayisi; i++) {        |
+                usSonuc *= basamak;                          |        Bu ifadeyle de aynı sonuça ulaşılabilir.
+            }                                                |        //toplam += (int) (Math.pow(basamak, basamakSayisi));
+                                                             |
+            toplam += usSonuc;                               |
+
+            kontrol /= 10;
+        }
+
+        if (toplam == sayi) {
+            System.out.println("Armstrong sayıdır.");
+        } else {
+            System.out.println("Armstrong sayı değildir.");
+        }
+    }
+}
+```
+
+</details>
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner (System.in);
+
+        int sayac = 0;
+        int toplam = 0;
+        int yardimci1 = 0;
+        int yardimci2 = 0;
+
+        System.out.println("---------------------------------------");
+        System.out.println("Armstrong Sayı Bulma Programı");
+        System.out.println("---------------------------------------");
+
+        System.out.print("Lütfen sayınızı giriniz : " );
+            int sayi = input.nextInt();
+
+        int kontrol = sayi;
+
+        while (true) {
+
+            kontrol = kontrol / 10;
+
+            if (kontrol == 0) {
+                sayac++;
+                break;
+            }
+
+            sayac++;
+        }
+
+        kontrol = sayi;
+        yardimci1 = sayac;
+
+        while (sayac > 0) {
+            yardimci2 = (int) (kontrol / Math.pow(10, sayac - 1));
+            toplam += (int) ( (Math.pow(yardimci2,yardimci1)));
+            kontrol = (int) (kontrol % Math.pow(10, sayac - 1));
+            sayac--;
+        }
+
+        if (toplam == sayi) {
+            System.out.println("Armstrong sayıdır.");
+        } else {
+            System.out.println("Armstrong sayı değildir.");
+        }
+
+    }
+
+}
+```
+
+</details>
+
+#### 3. İç İçe For Döngüsüyle Çarpım Tablosu Oluşturma
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+public class Test {
+    public static void main (String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 1; j <= 10; j++) {
+                System.out.println(i + "x" + j + "=" + i * j);
+            }
+        System.out.println("----------------------------");
+        }
+    }
+}
+```
+
+</details>
+
+#### 4. While Döngüsü ile Kullanıcı Girişi Programı
+Kullanıcıdan kullanıcı adı ve şifre bilgilerini alarak doğruluğunu kontrol eden ve en fazla 3 deneme hakkı bulunan bir giriş sistemi yazınız.
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String kullaniciAdi = "developer";
+        String sifre = "java";
+        int hak = 3;
+
+
+
+        while (hak > 0) {
+            System.out.println("--------------------------");
+            System.out.print("Kullanıcı Adı : ");
+            String kullaniciAdi_test = input.nextLine();
+            System.out.print("Şifre : ");
+            String sifre_test = input.nextLine();
+            System.out.println("--------------------------");
+
+            if (kullaniciAdi_test.equals(kullaniciAdi) && sifre_test.equals(sifre)) {
+                System.out.println("Giriş Başarılı...");
+                break;
+            }
+            System.out.println("Kullanıcı adı veya şifre hatalı!");
+            System.out.println("Tekrar Deneyiniz...");
+            hak--;
+        }
+        if (hak == 0) {
+            System.out.println("3 kez yanlış deneme yapıldı.");
+            System.out.println("Sistemden Çıkılıyor...");
+        }
+    }
+}
+```
+
+#### 5. Faiz Uygulaması
+
+Kullanıcıdan yatırmak istediği **anapara** tutarını alın.  
+Parayı **aylık mı yoksa yıllık mı** vadeli yatırmak istediğini sorun.  
+Seçime göre kaç **ay** veya kaç **yıl** vadeli yatıracağını öğrenin.  
+(%40 yıllık ≈ %3 aylık)
+
+Program:
+- Her ay sonunda oluşan **faiz getirisini**
+- Vade sonunda **toplam anapara + faiz** tutarını
+- Vade sonunda toplam faizi 
+
+ekrana yazdırmalıdır.
+
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        int sure = 0;
+        double toplamFaiz = 0;
+        double faizTutari = 0;
+        double yeniMiktar = 0;
+
+        System.out.println("----------------------------");
+        System.out.println("Faiz hesaplama uygulamasına hoşgeldiniz");
+        System.out.println("----------------------------");
+
+        System.out.print("Faize koyacağınız ana para tutarı : ");
+            int anapara = input.nextInt();
+        System.out.print("Ay için 1'i \n" + "Yıl için 2'i tuşlayın.");
+            int seçim = input.nextInt();
+
+        switch (seçim) {
+            case 1 :
+                System.out.print("Kaç aylığına yatırılacak : ");
+                    sure = input.nextInt();
+
+                faizTutari = anapara * 0.03;
+                toplamFaiz = faizTutari * sure;
+                yeniMiktar = anapara + toplamFaiz;
+
+                System.out.println("----------------------------");
+                System.out.printf("Yatırılan para : %d\n", anapara);
+                System.out.printf("Aylık faiz tutarı : %.2f\n", faizTutari);
+                System.out.printf("Toplam faiz : %.2f\n", toplamFaiz);
+                System.out.printf("Vadeli hesap bitişi sonrası yeni bakiye : %.2f", yeniMiktar);
+
+                break;
+
+            case 2 :
+                System.out.print("Kaç yıllığına yatırılacak : ");
+                    sure = input.nextInt();
+
+                faizTutari = anapara * 0.40;
+                toplamFaiz = faizTutari * sure;
+                yeniMiktar = anapara + toplamFaiz;
+
+                System.out.println("----------------------------");
+                System.out.printf("Yatırılan para : %d\n", anapara);
+                System.out.printf("Yıllık faiz tutarı : %.2f\n", faizTutari);
+                System.out.printf("Toplam faiz : %.2f\n", toplamFaiz);
+                System.out.printf("Vadeli hesap bitişi sonrası yeni bakiye : %.2f", yeniMiktar);
+
+                break;
+
+            default:
+                System.out.println("Geçersiz değer girdiniz.");
+                System.out.println("Çıkış yapılıyor....");
+
+        }
+    }
+}
+```
+
+</details>
+
+
+</details>
 ---
 
 ### 📚 Konu Akışı
