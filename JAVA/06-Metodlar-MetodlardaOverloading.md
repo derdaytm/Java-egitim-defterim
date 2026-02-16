@@ -303,6 +303,272 @@ public static void main(String[] args) {
 }
 ```
 
+## Egzersiz
+
+### 1. Kullanıcıdan Alınan Sayının Asal Olup Olmadığını Method Kullanarak Kontrol Etme 
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static int kullanici () {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Kontrol etmek istediğiniz sayıyı giriniz (Çıkış için -1 yazınız) : ");
+            int sayi = input.nextInt();
+
+        return sayi;
+    }
+
+    public static String asalmi (int sayi_f) {
+        for (int i = 2; i < sayi_f; i++) {
+            int kontrol = sayi_f % i ;
+
+            if (kontrol == 0) {
+                return "Asal Değil";
+            } else {
+                return "Asal";
+            }
+        }
+        return "";
+    }
+
+    public static void main (String[] args) {
+
+        int sayi = 0;
+
+        System.out.println("-----------------------");
+        System.out.println("Asal Sayı Bulma Uygulaması");
+        System.out.println("-----------------------");
+
+        while (true) {
+            sayi = kullanici();
+            
+
+            if(sayi == -1) {
+                System.out.println("Çıkış Yapılıyor...");
+                break;
+            } else {
+                System.out.println("Girdiğiniz sayı : " + asalmi(sayi));
+            }
+            System.out.println("-----------------------");
+        }
+    }
+}
+```
+
+</details>
+
+### 2. Kullanıcıdan Alınan 2 Sayının Ekok ve Ebobunu Bulma
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static int kullanici (int sayi_f) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print(sayi_f + ". sayınızı giriniz (Çıkış için -1 giriniz) : ");
+            int sayi = input.nextInt();
+
+        return sayi;
+    }
+
+    public static int ebobBulma (int sayi1_f, int sayi2_f) {
+
+        int ebob = 1;
+
+        for (int i = 1; i <= sayi1_f && i <=  sayi2_f; i++) {
+            if (sayi1_f % i == 0 && sayi2_f % i == 0) {
+                ebob = i;
+            }
+        }
+
+        return ebob;
+    }
+
+    public static int ekokBulma (int sayi1_f, int sayi2_f, int ebob_f) {
+        int ekok = (sayi1_f * sayi2_f) / ebob_f;
+        return ekok;
+    }
+
+    public static void main (String[] args) {
+        System.out.println("-----------------------------");
+        System.out.println("Ebob - Ekok Bulma Uygulaması");
+        System.out.println("-----------------------------");
+
+        while (true) {
+            int sayi1 = kullanici(1);
+            if (sayi1 == -1) {
+                System.out.println("Çıkış Yapılıyor...");
+                break;
+            }
+
+            int sayi2 = kullanici(2);
+
+            System.out.println("-----------------------------");
+            System.out.println("Girilen sayıların ebob'u : " + ebobBulma(sayi1, sayi2));
+            int ebob = ebobBulma(sayi1, sayi2);
+            System.out.println("Girilen sayıların ekok'u : " + ekokBulma(sayi1, sayi2, ebob));
+            System.out.println("-----------------------------");
+
+        }
+    }
+}
+```
+
+</details>
+
+### 3. Method Overloading Kullanarak Gelişmiş Hesap Makinesi
+
+> **NOT**
+>
+> Toplama ve Çarpma metodlarını 2 veya 3 parametre alacak şekilde tasarlayın.
+
+<details>
+<summary>📌 Kodu görmek için tıklayınız.</summary>
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static int toplama (int sayi1_f, int sayi2_f) {
+        return sayi1_f + sayi2_f;
+    }
+
+    public static int toplama (int sayi1_f, int sayi2_f, int sayi3_f) {
+        return sayi1_f + sayi2_f + sayi3_f;
+    }
+
+    public static int carpma (int sayi1_f, int sayi2_f) {
+        return sayi1_f * sayi2_f;
+    }
+
+    public static int carpma (int sayi1_f, int sayi2_f, int sayi3_f) {
+        return sayi1_f * sayi2_f * sayi3_f;
+    }
+
+    public static int cıkarma (int sayi1_f, int sayi2_f) {
+        return sayi1_f - sayi2_f;
+    }
+
+    public static int bölme (int sayi1_f, int sayi2_f) {
+        return sayi1_f / sayi2_f;
+    }
+
+    public static void main (String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        boolean sistemkontrol = true;
+        String islemler = "1. Toplama\n"
+                         +"2. Çıkarma\n"
+                         +"3. Bölme\n"
+                         +"4. Çarpma\n"
+                         +"5. Çıkış";
+
+        System.out.println("-----------------------------");
+        System.out.println("Hesap Makinesi");
+        System.out.println("-----------------------------");
+
+        while (sistemkontrol) {
+            System.out.println(islemler);
+            System.out.print("Lütfen yapmak istediğiniz işlemi seçiniz : ");
+            System.out.println("-----------------------------");
+            
+                int islem = input.nextInt();
+
+            switch (islem) {
+                case 1 :
+                case 4 :
+                    System.out.print("2 sayıyla mı yoksa 3 sayıyla mı işlem yapmak istersiniz : ");
+                        int tercih = input.nextInt();
+
+                    if ( tercih == 2) {
+                        System.out.print("1. Sayıyı giriniz : ");
+                            int sayi1 = input.nextInt();
+                        System.out.print("2. Sayıyı giriniz : ");
+                            int sayi2 = input.nextInt();
+
+                        if ( islem == 1 ) {
+                            System.out.println("Sonuç : " + toplama(sayi1, sayi2));
+                            System.out.println("-----------------------------");
+                        }
+
+                        if ( islem == 4 ) {
+                            System.out.println("Sonuç : " + carpma(sayi1, sayi2));
+                            System.out.println("-----------------------------");
+                        }
+
+                    } else if ( tercih == 3 ) {
+                        System.out.print("1. Sayıyı giriniz : ");
+                            int sayi1 = input.nextInt();
+                        System.out.print("2. Sayıyı giriniz : ");
+                            int sayi2 = input.nextInt();
+                        System.out.print("3. Sayıyı giriniz : ");
+                            int sayi3 = input.nextInt();
+
+                        if ( islem == 1 ) {
+                            System.out.println("Sonuç : " + toplama(sayi1, sayi2, sayi3));
+                            System.out.println("-----------------------------");
+                        }
+
+                        if ( islem == 4 ) {
+                            System.out.println("Sonuç : " + carpma(sayi1, sayi2, sayi3));
+                            System.out.println("-----------------------------");
+                        }
+
+                    } else {
+                        System.out.print("Geçersiz değer girişi...");
+                    }
+
+                    break;
+
+                case 2 :
+                case 3 :
+                    System.out.print("1. Sayıyı giriniz : ");
+                    int sayi1 = input.nextInt();
+                    System.out.print("2. Sayıyı giriniz : ");
+                    int sayi2 = input.nextInt();
+
+                    if ( islem == 2 ) {
+                        System.out.println("Sonuç : " + cıkarma(sayi1, sayi2));
+                        System.out.println("-----------------------------");
+                    }
+
+                    if ( islem == 3 ) {
+                        System.out.println("Sonuç : " + bölme(sayi1, sayi2));
+                        System.out.println("-----------------------------");
+                    }
+
+                    break;
+
+                case 5 :
+                    sistemkontrol = false;
+                    break;
+
+                default:
+                    System.out.println("Geçersiz değer girişi...");
+                    System.out.println("Tekrar Deneyiniz...");
+                    System.out.println("-----------------------------");
+            }
+        }
+
+    }
+
+}
+```
+
+</details>
+
 ---
 
 ### 📚 Konu Akışı
