@@ -69,6 +69,8 @@
 - for, while ve do - while Arasındaki Temel Farklar
 - breal Anahtar Kelimesi
 - continue Anahtar Kelimesi
+- Ekstralar
+  - .equals()
 
 ## [Metodlar ve Metodlarda Overloading](JAVA/06-Metodlar-MetodlardaOverloading.md)
 - Metod Nedir ve Ne İşe Yarar ?
