@@ -560,7 +560,7 @@ metin1.equals(metin2);
 
 ## Egzersiz
 
-#### 1. ATM Programı
+### 1. ATM Programı
 Döngü yardımıyla bir tane ATM programı yapalım.
 
 İşlemler : <br>
@@ -672,7 +672,7 @@ public class Test {
 
 </details>
 
-#### 2. Armstrong Sayı Bulma
+### 2. Armstrong Sayı Bulma
 Kullanıcıdan alınan sayının armstrong olup olmadığını bulan bir program yazın.
 
 Armstrong sayı : N haneli bir sayının basamaklarının n'inci üstlerinin toplamı, sayının kendisine eşitse böyle sayılara Armstrong sayı denir.
@@ -799,7 +799,7 @@ public class Test {
 
 </details>
 
-#### 3. İç İçe For Döngüsüyle Çarpım Tablosu Oluşturma
+### 3. İç İçe For Döngüsüyle Çarpım Tablosu Oluşturma
 
 <details>
 <summary>📌 Kodu görmek için tıklayınız.</summary>
@@ -819,7 +819,7 @@ public class Test {
 
 </details>
 
-#### 4. While Döngüsü ile Kullanıcı Girişi Programı
+### 4. While Döngüsü ile Kullanıcı Girişi Programı
 Kullanıcıdan kullanıcı adı ve şifre bilgilerini alarak doğruluğunu kontrol eden ve en fazla 3 deneme hakkı bulunan bir giriş sistemi yazınız.
 
 <details>
@@ -863,7 +863,7 @@ public class Test {
 }
 ```
 
-#### 5. Faiz Uygulaması
+### 5. Faiz Uygulaması
 
 Kullanıcıdan yatırmak istediği **anapara** tutarını alın.  
 Parayı **aylık mı yoksa yıllık mı** vadeli yatırmak istediğini sorun.  
