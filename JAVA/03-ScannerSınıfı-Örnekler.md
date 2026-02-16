@@ -267,6 +267,10 @@ public class Test {
 
 `Math.pow()` iki sayının **üssünü almak** için kullanılan hazır (built-in) bir Java metodudur.
 
+> **NOT**
+>
+> Double formatında çalışır.
+
 #### Ne İşe Yarar?
 
 Bir sayının başka bir sayı kuvvetini hesaplar.
