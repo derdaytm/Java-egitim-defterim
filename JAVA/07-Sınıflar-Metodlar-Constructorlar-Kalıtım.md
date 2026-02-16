@@ -372,9 +372,6 @@ Bu konuyu daha net anlayabilmek için **4 bölümde** ele alacağız:
 3️⃣ **Get metodu (getter)**  
 → Veriyi güvenli şekilde okuruz  
 
-4️⃣ **Kapsamlı örnek**  
-→ Tüm yapıyı tek bir örnek üzerinde görürüz  
-
 Her bölüm bir öncekini tamamlar.  
 Şimdi ilk adımla başlayalım 👇
 
@@ -672,8 +669,6 @@ Böylelikle hem atama yapabilir hem okuma yapabilir hemde güvenli bir hale geti
 Böylece veriye doğrudan müdahale edilmeden,
 hem kontrollü şekilde değer atayabilir,
 hem de güvenli biçimde okuyabiliriz.
-
-Şimdi son olarak 4.aşamada kapsamlı bir örnek inceleyelim.
 
 ---
 
