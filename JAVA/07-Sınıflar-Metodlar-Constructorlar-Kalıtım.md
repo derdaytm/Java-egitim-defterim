@@ -63,13 +63,14 @@ Arabanın:
 - **çalıştır(), hızlan(), dur()** → metodlar (**methods**)  
 
 Yani Java’da:
-- Bir **class**, gerçek hayattaki bir nesnenin **planıdır**
+- Bir **class**, gerçek hayattaki bir nesnenin **planıdır**.
 - Özellikler **değişken** olarak,
 - Davranışlar ise **metod** olarak tanımlanır.
 
 Bu sayede:
 - Birbirleriyle ilişkili veriler ve işlemler **tek bir yapı altında** toplanır.
 - Kod daha **anlaşılır**, **düzenli** ve **yönetilebilir** olur.
+  
 ---
 
 ## Class Nedir?
@@ -127,7 +128,7 @@ public class Araba {
  **Bu aşamada:**
 - Henüz gerçek bir **araba (nesne)** yok. Sadece `class`'ımızı oluşturduk.
 
-## Önemli Not
+### Önemli Not
 
 - Java’da **public class** varsa:
   - Class adı ile **dosya adı aynı olmalıdır**.
@@ -166,7 +167,7 @@ Bir class’a **özellik eklemek**,  `class` süslü parantezleri `{ }` içine *
 1. Class oluşturulur.
 2. Class’ın içine `public` ile veri tipi ve değişken adı yazılır.
 
-## Temel Kullanım
+### Temel Kullanım
 
 ```java
 public class Araba {
@@ -188,7 +189,7 @@ Class sadece bir **şablondur**.
 
 Bir class’ı kullanabilmek için ondan **nesne (object)** oluşturmamız gerekir.
 
-## Nesne Nasıl Oluşturulur?
+### Nesne Nasıl Oluşturulur?
 
 ### Temel Sözdizimi
 ```java
@@ -241,7 +242,7 @@ Burada :
 - **Test** → `main` metodunun olduğu, deneme yaptığımız class
 - ve `main` metodunun içinde `araba1` nesnemiz.
 
-### Araba Class’ı
+Araba Class’ımız :
 
 ```java
 public class Araba {
@@ -265,7 +266,7 @@ Bu class:
 - Çalışmaz
 - Tek başına bir şey yapmaz.
 
-### Test Class'ı
+Test Class'ımız :
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -300,7 +301,7 @@ public class Test {
 `public` ile tanımlanan özelliklere **her yerden serbestçe erişilebilir**.  
 Bu ilk başta kolay görünür ama **ciddi sorunlara yol açar**.
 
-## 1️⃣ Kontrolsüz Veri Değişimi
+### 1️⃣ Kontrolsüz Veri Değişimi
 
 `public` özellikler:
 - İstediğimiz değeri,
@@ -313,9 +314,10 @@ araba1.kilometre = -500;   // Mantıksız ama izin verilir
 araba1.fiyat = 0;         // Hata ama engel yok
 araba1.motorHacmi = -1.6; // Sorunlu
 ```
+
 > **NOT** : Buradaki kodlar `test` classının içine yazılmıştır.
 
-## 2️⃣ Class Kontrolünü Kaybeder
+### 2️⃣ Class Kontrolünü Kaybeder
 
 Bir class:
 - Kendi verisini **korumalıdır**.
@@ -325,14 +327,14 @@ Ama `public` olunca:
 - Class sadece bir **veri deposuna** dönüşür.
 - İş mantığı class dışına **dağılır**.
 
-## 3️⃣ Hatalı Kullanıma Açık Hale Gelir
+### 3️⃣ Hatalı Kullanıma Açık Hale Gelir
 
 Başka biri (veya ileride sen):
 - Özellikleri **yanlış** kullanılabilir.
 - Değerin **nerede değiştiğini** takip edilemez.
 - Hata ayıklama (**debug**) süreci zorlaşır.
 
-## 4️⃣ Gerçek Hayat Mantığına Aykırı
+### 4️⃣ Gerçek Hayat Mantığına Aykırı
 
 Gerçek hayatta:
 - Arabanın kilometresini **herkes kafasına göre** değiştiremez.
@@ -349,19 +351,19 @@ Ama `public` olunca:
 **Encapsulation (kapsülleme)** yaklaşımını uygularız.
 
 Encapsulation’ın temel amacı:
-> **Veriyi gizlemek ve erişimi kontrol altına almak**
+> **Veriyi gizlemek ve erişimi kontrol altına almak**.
 
-## Encapsulation Nedir?
+### Encapsulation Nedir?
 
 Encapsulation, bir class’ın:
 - İç detaylarını **dış dünyadan saklaması**.
 - Veriye doğrudan erişimi **engellemesi**.
 - Erişimin sadece **kontrollü yollarla** sağlanmasıdır.
 
-## Java’da Encapsulation Nasıl Uygulanır?
+### Java’da Encapsulation Nasıl Uygulanır?
 
 Encapsulation’ı Java’da **adım adım** uygularız.  
-Bu konuyu daha net anlayabilmek için **4 bölümde** ele alacağız:
+Bu konuyu daha net anlayabilmek için **3 bölümde** ele alacağız:
 
 1️⃣ **Özellikleri `private` yapma**  
 → Veriyi dış dünyadan gizleriz  
@@ -386,16 +388,16 @@ class içindeki özellikleri `private` yapmaktır.
 - Class **dışından doğrudan erişilemez**.
 - Sadece **kendi class’ı içinden** erişilebilir.
   
-## Neden `private` Yapıyoruz?
+### Neden `private` Yapıyoruz?
 
 Çünkü:
 - Verinin kontrolsüz değişmesini istemeyiz.
 - Hatalı değer atamalarını engellemek isteriz.
 - Kontrol class’ın kendisinde olmalıdır.
 
-## Private kullanımı 
+### Private kullanımı 
 
-### Araba Class’ı
+Araba Class’ımız :
 
 ```java
 public class Araba {
@@ -430,14 +432,14 @@ Burada da görüldüğü üzere bahsettiğimiz hatayı aldık.
 
 `set` metodu, `private` yapılmış bir özelliğe **kontrollü şekilde değer atamak** için kullanılır.
 
-## Set Metodu Ne İşe Yarar?
+### Set Metodu Ne İşe Yarar?
 
 - `private` özelliğe doğrudan erişimi engeller.
 - Değer atamayı **class’ın kontrolüne** bırakır.
 - **class** set kavramı ile kontrollü bir erişim sağlar.
 - Böylelikle hatalı veya mantıksız değerleri **filtreleyebilir**.
   
-## Set Metodu Nasıl Yazılır?
+### Set Metodu Nasıl Yazılır?
 
 ### Genel Yapı
 ```java
@@ -458,9 +460,9 @@ Bu karışıklığı önlemek için:
 - `this.deger` ile **class’a ait olanı**,
 - `this` olmadan **parametreyi**(test'ten gönderilen), işaret ederiz.
 
-## Set kullanımı 
+### Set kullanımı 
 
-### Araba Class’ı
+Araba Class’ımız :
 
 ```java
 public class Araba {
@@ -531,7 +533,7 @@ public class Araba {
 }
 ```
 
-### Test Class’ı
+Test Class’ımız :
 
 <img width="764" height="500" alt="image" src="https://github.com/user-attachments/assets/09ceca31-c4f9-4aaf-b816-f7c9b07a7a47" />
 
@@ -547,7 +549,7 @@ public class Araba {
 
 Değeri **değiştirmez**, sadece **geri döndürür**.
 
-## Get Metodu Ne İşe Yarar?
+### Get Metodu Ne İşe Yarar?
 
 - `private` özelliklere **doğrudan erişilemez**.
 - Ancak bu değerlere **ihtiyaç duyarız**.
@@ -556,7 +558,7 @@ Değeri **değiştirmez**, sadece **geri döndürür**.
 > **Setter** → yazmak için  
 > **Getter** → okumak için
 
-## Get Metodu Nasıl Yazılır?
+### Get Metodu Nasıl Yazılır?
 
 ### Genel Yapı
 ```java
@@ -570,9 +572,9 @@ public veriTipi getDegiskenAdi() {
 > `get` bir anahtar kelime değildir.
 >  Yazılan yapı, `set`'tede dediğimiz gibi **normal bir java metodudur.**
 
-## Get Kullanımı
+### Get Kullanımı
 
-### Araba Class’ı
+Araba Class’ımız :
 
 ```java
 public class Araba {
@@ -630,7 +632,7 @@ public boolean isCalisiyorMu() {
 >
 > `boolean` tiplerde getter metodları genellikle `get` yerine `is` ile başlar.
 
-### Test Class’ı
+Test Class’ımız :
 
 ```java
 public class Test {
